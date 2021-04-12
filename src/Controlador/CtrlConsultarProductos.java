@@ -1,14 +1,14 @@
 package Controlador;
 
 import Modelo.Colaborador;
-import Vista.FrmColaboradorView;
+import Vista.FrmConsultarProductos;
 
 public class CtrlConsultarProductos {
 
-    FrmColaboradorView vista;
+    FrmConsultarProductos vista;
     Colaborador colaborador;
 
-    public CtrlConsultarProductos(FrmColaboradorView vista, Colaborador colaborador) {
+    public CtrlConsultarProductos(FrmConsultarProductos vista, Colaborador colaborador) {
         this.vista = vista;
         this.colaborador = colaborador;
         
@@ -17,7 +17,6 @@ public class CtrlConsultarProductos {
     }
 
     public void inicializar() {
-        this.vista.setLocationRelativeTo(null);
-        this.vista.setVisible(true);
+        this.vista.show();        
     }
 }

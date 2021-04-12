@@ -21,10 +21,12 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         menuConsultas = new javax.swing.JMenu();
         itConsultaProductos = new javax.swing.JMenuItem();
         itConsultaClientes = new javax.swing.JMenuItem();
+        menuMantenimientos = new javax.swing.JMenu();
+        itMantenimientoProductos = new javax.swing.JMenuItem();
+        itMantenimientoClientes = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(600, 550));
-        setSize(new java.awt.Dimension(600, 550));
+        setSize(new java.awt.Dimension(700, 575));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(600, 550));
@@ -37,7 +39,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         panelEscritorio.setLayout(panelEscritorioLayout);
         panelEscritorioLayout.setHorizontalGroup(
             panelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 700, Short.MAX_VALUE)
         );
         panelEscritorioLayout.setVerticalGroup(
             panelEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,21 +100,53 @@ public class FrmColaboradorView extends javax.swing.JFrame {
 
         menuPrincipal.add(menuConsultas);
 
+        menuMantenimientos.setBackground(new java.awt.Color(3, 137, 57));
+        menuMantenimientos.setBorder(null);
+        menuMantenimientos.setForeground(new java.awt.Color(51, 51, 51));
+        menuMantenimientos.setText("Mantenimientos");
+        menuMantenimientos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+
+        itMantenimientoProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        itMantenimientoProductos.setBackground(new java.awt.Color(204, 204, 204));
+        itMantenimientoProductos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        itMantenimientoProductos.setForeground(new java.awt.Color(51, 51, 51));
+        itMantenimientoProductos.setText("Mantenimiento de productos");
+        itMantenimientoProductos.setBorder(null);
+        itMantenimientoProductos.setPreferredSize(new java.awt.Dimension(250, 25));
+        itMantenimientoProductos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itMantenimientoProductosActionPerformed(evt);
+            }
+        });
+        menuMantenimientos.add(itMantenimientoProductos);
+
+        itMantenimientoClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        itMantenimientoClientes.setBackground(new java.awt.Color(204, 204, 204));
+        itMantenimientoClientes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        itMantenimientoClientes.setForeground(new java.awt.Color(51, 51, 51));
+        itMantenimientoClientes.setText("Mantenimiento de clientes");
+        itMantenimientoClientes.setBorder(null);
+        itMantenimientoClientes.setPreferredSize(new java.awt.Dimension(193, 25));
+        itMantenimientoClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itMantenimientoClientesActionPerformed(evt);
+            }
+        });
+        menuMantenimientos.add(itMantenimientoClientes);
+
+        menuPrincipal.add(menuMantenimientos);
+
         setJMenuBar(menuPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -125,6 +159,14 @@ public class FrmColaboradorView extends javax.swing.JFrame {
     private void itConsultaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itConsultaClientesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itConsultaClientesActionPerformed
+
+    private void itMantenimientoProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMantenimientoProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itMantenimientoProductosActionPerformed
+
+    private void itMantenimientoClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMantenimientoClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itMantenimientoClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,8 +206,11 @@ public class FrmColaboradorView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem itConsultaClientes;
     public javax.swing.JMenuItem itConsultaProductos;
+    public javax.swing.JMenuItem itMantenimientoClientes;
+    public javax.swing.JMenuItem itMantenimientoProductos;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JMenu menuConsultas;
+    public javax.swing.JMenu menuMantenimientos;
     public javax.swing.JMenuBar menuPrincipal;
     public javax.swing.JDesktopPane panelEscritorio;
     // End of variables declaration//GEN-END:variables

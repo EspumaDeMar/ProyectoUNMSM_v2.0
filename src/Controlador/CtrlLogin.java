@@ -27,7 +27,6 @@ public class CtrlLogin {
             public void actionPerformed(ActionEvent e) {
 
                 boolean hasResults = false;
-
                 String correo = vista.txtCorreo.getText().trim();
                 String contraseña = vista.txtContraseña.getText().trim();
 

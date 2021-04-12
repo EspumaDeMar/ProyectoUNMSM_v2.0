@@ -9,12 +9,12 @@ package Vista;
  *
  * @author Diego's PC
  */
-public class FrmConsultarProductos extends javax.swing.JInternalFrame {
+public class FrmConsultarClientes extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form FrmConsultarProductos
+     * Creates new form FrmConsultarClientes
      */
-    public FrmConsultarProductos() {
+    public FrmConsultarClientes() {
         initComponents();
     }
 
@@ -32,10 +32,7 @@ public class FrmConsultarProductos extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Consulta de productos");
-        setMaximumSize(new java.awt.Dimension(600, 550));
-        setMinimumSize(new java.awt.Dimension(600, 550));
-        setPreferredSize(new java.awt.Dimension(550, 500));
+        setTitle("Consulta de clientes registrados");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -45,7 +42,7 @@ public class FrmConsultarProductos extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 481, Short.MAX_VALUE)
+            .addGap(0, 480, Short.MAX_VALUE)
         );
 
         pack();
