@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vista;
+package Vista.ColaboradorViews;
 
 /**
  *
  * @author Diego's PC
  */
-public class FrmConsultarClientes extends javax.swing.JInternalFrame {
+public class FrmConsultarProductos extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form FrmConsultarClientes
+     * Creates new form FrmConsultarProductos
      */
-    public FrmConsultarClientes() {
+    public FrmConsultarProductos() {
         initComponents();
     }
 
@@ -32,7 +32,10 @@ public class FrmConsultarClientes extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
-        setTitle("Consulta de clientes registrados");
+        setTitle("Consulta de productos");
+        setMaximumSize(new java.awt.Dimension(600, 550));
+        setMinimumSize(new java.awt.Dimension(600, 550));
+        setPreferredSize(new java.awt.Dimension(550, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -42,7 +45,7 @@ public class FrmConsultarClientes extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+            .addGap(0, 481, Short.MAX_VALUE)
         );
 
         pack();

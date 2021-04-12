@@ -1,7 +1,7 @@
-package Controlador;
+package Controlador.ColaboradorControllers;
 
 import Modelo.Colaborador;
-import Vista.FrmConsultarProductos;
+import Vista.ColaboradorViews.FrmConsultarProductos;
 
 public class CtrlConsultarProductos {
 

@@ -1,11 +1,12 @@
 package Controlador;
 
+import Controlador.ColaboradorControllers.CtrlColaboradorView;
 import Conexion.Conexion;
 
 import Modelo.Colaborador;
 import Modelo.Cuenta;
-import Vista.FrmColaboradorView;
 
+import Vista.ColaboradorViews.FrmColaboradorView;
 import Vista.FrmLogin;
 
 import java.awt.event.ActionEvent;
@@ -106,7 +107,6 @@ public class CtrlLogin {
         this.vista.btnIniciarSesion.addActionListener(accion);
         this.vista.txtCorreo.addActionListener(accion);
         this.vista.txtContraseña.addActionListener(accion);
-
     }
 
     public void inicializar() {

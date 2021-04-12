@@ -1,9 +1,22 @@
 package Vista;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
 public class FrmLogin extends javax.swing.JFrame {
 
     public FrmLogin() {
         initComponents();
+        
+        /*setIconImage(new ImageIcon(getClass().getResource("")));*/
+    }
+
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Recursos/Imagenes/LagartoLOGO.jpg"));
+
+        return retValue;
     }
 
     /**
@@ -26,6 +39,7 @@ public class FrmLogin extends javax.swing.JFrame {
         lvlOlvideContraseña = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -83,7 +97,7 @@ public class FrmLogin extends javax.swing.JFrame {
         lvlOlvideContraseña.setForeground(new java.awt.Color(102, 102, 102));
         lvlOlvideContraseña.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lvlOlvideContraseña.setText("Olvidé mi contraseña");
-        lvlOlvideContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lvlOlvideContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lvlOlvideContraseña.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

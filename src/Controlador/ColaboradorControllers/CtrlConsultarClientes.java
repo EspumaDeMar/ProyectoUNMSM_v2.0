@@ -1,7 +1,7 @@
-package Controlador;
+package Controlador.ColaboradorControllers;
 
 import Modelo.Colaborador;
-import Vista.FrmConsultarClientes;
+import Vista.ColaboradorViews.FrmConsultarClientes;
 
 public class CtrlConsultarClientes {
     FrmConsultarClientes vista;

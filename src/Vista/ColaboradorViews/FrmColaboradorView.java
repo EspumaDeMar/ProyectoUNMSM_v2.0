@@ -1,4 +1,4 @@
-package Vista;
+package Vista.ColaboradorViews;
 
 public class FrmColaboradorView extends javax.swing.JFrame {
 
@@ -70,7 +70,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         menuConsultas.setText("Consultas");
         menuConsultas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        itConsultaProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
+        itConsultaProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itConsultaProductos.setBackground(new java.awt.Color(204, 204, 204));
         itConsultaProductos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         itConsultaProductos.setForeground(new java.awt.Color(51, 51, 51));
@@ -84,7 +84,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         });
         menuConsultas.add(itConsultaProductos);
 
-        itConsultaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
+        itConsultaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itConsultaClientes.setBackground(new java.awt.Color(204, 204, 204));
         itConsultaClientes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         itConsultaClientes.setForeground(new java.awt.Color(51, 51, 51));
@@ -106,7 +106,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         menuMantenimientos.setText("Mantenimientos");
         menuMantenimientos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        itMantenimientoProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        itMantenimientoProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itMantenimientoProductos.setBackground(new java.awt.Color(204, 204, 204));
         itMantenimientoProductos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         itMantenimientoProductos.setForeground(new java.awt.Color(51, 51, 51));
@@ -120,7 +120,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         });
         menuMantenimientos.add(itMantenimientoProductos);
 
-        itMantenimientoClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        itMantenimientoClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itMantenimientoClientes.setBackground(new java.awt.Color(204, 204, 204));
         itMantenimientoClientes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         itMantenimientoClientes.setForeground(new java.awt.Color(51, 51, 51));
