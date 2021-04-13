@@ -24,6 +24,8 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         menuMantenimientos = new javax.swing.JMenu();
         itMantenimientoProductos = new javax.swing.JMenuItem();
         itMantenimientoClientes = new javax.swing.JMenuItem();
+        menuSalir = new javax.swing.JMenu();
+        itCerrarSesion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(700, 575));
@@ -136,6 +138,29 @@ public class FrmColaboradorView extends javax.swing.JFrame {
 
         menuPrincipal.add(menuMantenimientos);
 
+        menuSalir.setBackground(new java.awt.Color(3, 137, 57));
+        menuSalir.setBorder(null);
+        menuSalir.setForeground(new java.awt.Color(51, 51, 51));
+        menuSalir.setText("Fin");
+        menuSalir.setToolTipText("");
+        menuSalir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+
+        itCerrarSesion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
+        itCerrarSesion.setBackground(new java.awt.Color(204, 204, 204));
+        itCerrarSesion.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        itCerrarSesion.setForeground(new java.awt.Color(51, 51, 51));
+        itCerrarSesion.setText("Cerrar sesión");
+        itCerrarSesion.setBorder(null);
+        itCerrarSesion.setPreferredSize(new java.awt.Dimension(250, 25));
+        itCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itCerrarSesionActionPerformed(evt);
+            }
+        });
+        menuSalir.add(itCerrarSesion);
+
+        menuPrincipal.add(menuSalir);
+
         setJMenuBar(menuPrincipal);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,6 +192,10 @@ public class FrmColaboradorView extends javax.swing.JFrame {
     private void itMantenimientoClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMantenimientoClientesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itMantenimientoClientesActionPerformed
+
+    private void itCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itCerrarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,6 +233,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem itCerrarSesion;
     public javax.swing.JMenuItem itConsultaClientes;
     public javax.swing.JMenuItem itConsultaProductos;
     public javax.swing.JMenuItem itMantenimientoClientes;
@@ -212,6 +242,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
     public javax.swing.JMenu menuConsultas;
     public javax.swing.JMenu menuMantenimientos;
     public javax.swing.JMenuBar menuPrincipal;
+    public javax.swing.JMenu menuSalir;
     public javax.swing.JDesktopPane panelEscritorio;
     // End of variables declaration//GEN-END:variables
 }

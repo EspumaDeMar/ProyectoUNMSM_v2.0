@@ -1,5 +1,6 @@
 package Controlador.ColaboradorControllers;
 
+import Controlador.CtrlLogin;
 import Modelo.Colaborador;
 
 import Vista.ColaboradorViews.FrmColaboradorView;
@@ -7,6 +8,7 @@ import Vista.ColaboradorViews.FrmConsultarClientes;
 import Vista.ColaboradorViews.FrmConsultarProductos;
 import Vista.ColaboradorViews.FrmMantenimientoClientes;
 import Vista.ColaboradorViews.FrmMantenimientoProductos;
+import Vista.FrmLogin;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -20,6 +22,20 @@ public class CtrlColaboradorView {
     public CtrlColaboradorView(FrmColaboradorView vista, Colaborador colaborador) {
         this.vista = vista;
         this.colaborador = colaborador;
+        
+        vista.itCerrarSesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmLogin fLogin = new FrmLogin();
+                CtrlLogin cLogin = new CtrlLogin(fLogin);
+                fLogin.txtCorreo.setText(colaborador.getCuenta().getCorreo());
+                fLogin.txtContraseña.requestFocus();
+
+                cLogin.inicializar();
+
+                vista.dispose();
+            }
+        });
 
         vista.itConsultaProductos.addActionListener(new ActionListener() {
             @Override
@@ -48,9 +64,9 @@ public class CtrlColaboradorView {
             public void actionPerformed(ActionEvent e) {
                 FrmMantenimientoClientes fmClientes = new FrmMantenimientoClientes();
                 redimensionar(fmClientes);
-                
+
                 CtrlMantenimientoClientes mClientes = new CtrlMantenimientoClientes(fmClientes, colaborador);
-                mClientes.inicializar();                
+                mClientes.inicializar();
             }
         });
 
@@ -59,7 +75,7 @@ public class CtrlColaboradorView {
             public void actionPerformed(ActionEvent e) {
                 FrmMantenimientoProductos fmProductos = new FrmMantenimientoProductos();
                 redimensionar(fmProductos);
-                
+
                 CtrlMantenimientoProductos mProductos = new CtrlMantenimientoProductos(fmProductos, colaborador);
                 mProductos.inicializar();
             }
@@ -75,5 +91,4 @@ public class CtrlColaboradorView {
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
     }
-
 }
