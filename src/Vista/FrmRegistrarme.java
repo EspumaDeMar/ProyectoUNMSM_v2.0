@@ -29,7 +29,6 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         rdoFemenino = new javax.swing.JRadioButton();
         rdoMasculino = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
-        txtDNI = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
@@ -39,6 +38,7 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         txtRepetirContraseña = new javax.swing.JPasswordField();
         btnRegistrarme = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        txtDNI = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lagarto Store - Registro");
@@ -74,22 +74,18 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         rdoFemenino.setForeground(new java.awt.Color(102, 102, 102));
         rdoFemenino.setText("Femenino");
         rdoFemenino.setBorder(null);
-        rdoFemenino.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rdoFemenino.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         rdoMasculino.setBackground(new java.awt.Color(255, 255, 255));
         rdoMasculino.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         rdoMasculino.setForeground(new java.awt.Color(102, 102, 102));
         rdoMasculino.setText("Masculino");
         rdoMasculino.setBorder(null);
-        rdoMasculino.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rdoMasculino.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
         jLabel4.setText("DNI:");
-
-        txtDNI.setBackground(new java.awt.Color(255, 255, 255));
-        txtDNI.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtDNI.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
@@ -125,13 +121,16 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         btnRegistrarme.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnRegistrarme.setForeground(new java.awt.Color(51, 51, 51));
         btnRegistrarme.setText("Registrarme");
-        btnRegistrarme.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnRegistrarme.setBorder(null);
 
         btnCancelar.setBackground(new java.awt.Color(3, 137, 57));
         btnCancelar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnCancelar.setForeground(new java.awt.Color(51, 51, 51));
         btnCancelar.setText("Cancelar");
-        btnCancelar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnCancelar.setBorder(null);
+
+        txtDNI.setBackground(new java.awt.Color(255, 255, 255));
+        txtDNI.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -155,7 +154,6 @@ public class FrmRegistrarme extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtApellidoPaterno, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(rdoMasculino)
@@ -164,7 +162,8 @@ public class FrmRegistrarme extends javax.swing.JFrame {
                                 .addComponent(txtApellidoMaterno, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRepetirContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtRepetirContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(149, 149, 149)
                         .addComponent(btnRegistrarme, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -213,7 +212,7 @@ public class FrmRegistrarme extends javax.swing.JFrame {
                 .addComponent(btnRegistrarme, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jLabel1.getAccessibleContext().setAccessibleName("");

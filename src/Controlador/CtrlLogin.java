@@ -32,10 +32,10 @@ public class CtrlLogin {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                String correo = vista.txtCorreo.getText().trim();
-                String contraseña = vista.txtContraseña.getText().trim();
+                String correo = vista.txtCorreo.getText();
+                String contraseña = vista.txtContraseña.getText();
 
-                if (correo.isEmpty() || contraseña.isEmpty() || !(correo.contains("@unmsm.edu.pe") || correo.contains("@gmail.com"))) {
+                if (correo.isBlank() || contraseña.isBlank() || !(correo.contains("@unmsm.edu.pe") || correo.contains("@gmail.com"))) {
                     JOptionPane.showMessageDialog(vista, "Ingresa un usuario y/o contraseña válido(s)", "Iniciar sesión", 0);
                     vista.txtContraseña.requestFocus();
 
@@ -82,7 +82,6 @@ public class CtrlLogin {
                             vista.btnRegistrarme.requestFocus();
                         }
                     }
-
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.toString(), "SQL", 0);
                 }
