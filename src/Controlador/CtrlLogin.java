@@ -9,6 +9,7 @@ import Modelo.Cuenta;
 
 import Vista.ColaboradorViews.FrmColaboradorView;
 import Vista.FrmLogin;
+import Vista.FrmRegistrarme;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -94,10 +95,16 @@ public class CtrlLogin {
 
         this.vista.btnRegistrarme.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-
+            public void actionPerformed(ActionEvent e) {                
+                FrmRegistrarme fRegistrarme = new FrmRegistrarme();
+                CtrlRegistrarme cRegistrarme = new CtrlRegistrarme(fRegistrarme);
+                cRegistrarme.inicializar();
+                
+                vista.dispose();
             }
         });
+        
+        
     }
 
     public void inicializar() {

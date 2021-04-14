@@ -13,6 +13,7 @@ import Vista.FrmLogin;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
 
 public class CtrlColaboradorView {
 
@@ -88,6 +89,7 @@ public class CtrlColaboradorView {
     }
 
     public void inicializar() {
+        this.vista.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
     }
