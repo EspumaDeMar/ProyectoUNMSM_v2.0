@@ -3,9 +3,14 @@ package Controlador;
 import Controlador.ColaboradorControllers.CtrlColaboradorView;
 import Conexion.Conexion;
 import Conexion.DBParametro;
+import Controlador.ClienteControllers.CtrlClienteView;
+import Modelo.Cliente;
 
 import Modelo.Colaborador;
+import Modelo.Compra;
 import Modelo.Cuenta;
+import Modelo.Producto;
+import Vista.ClienteViews.FrmClienteView;
 
 import Vista.ColaboradorViews.FrmColaboradorView;
 import Vista.FrmLogin;
@@ -67,14 +72,58 @@ public class CtrlLogin {
                                     colaborador.setTurno(("NOCHE"));
                                 }
 
+                                //CAMBIAR ESTADO A CONECTADO
                                 FrmColaboradorView fColaboradorV = new FrmColaboradorView();
                                 CtrlColaboradorView cColaboradorV = new CtrlColaboradorView(fColaboradorV, colaborador);
                                 cColaboradorV.inicializar();
-
-                                vista.dispose();
                             } else {
+                                Cliente cliente = new Cliente(
+                                        rs.getInt("ID"),
+                                        rs.getInt("DNI"),
+                                        rs.getString("NOMBRE"),
+                                        rs.getString("APELLIDOPATERNO"),
+                                        rs.getString("APELLIDOMATERNO"),
+                                        rs.getString("SEXO"));
+                                cliente.setCuenta(new Cuenta(correo, contraseña));
 
+                                parametros.clear();
+                                parametros.add(new DBParametro("ID", cliente.getID()));
+                                rs = Conexion.getSP("GETComprasDeCliente(?)", vista, parametros);
+                                
+                                parametros.clear();
+                                List<Compra> compras = new ArrayList<Compra>();
+                                while (rs.next()) {
+                                    Compra compra = new Compra(
+                                            rs.getInt("ID_COMPRA"),
+                                            rs.getDouble("MONTO"),
+                                            cliente);
+                                    
+                                    parametros.add(new DBParametro("ID_COMPRA", compra.getID()));
+                                    ResultSet rsTemp = Conexion.getSP("GETProductosDeCompra(?)", vista, parametros);
+                                    
+                                    List<Producto> productos = new ArrayList<Producto>();
+                                    while(rsTemp.next()){
+                                        Producto producto = new Producto(
+                                            rsTemp.getInt("ID_PRODUCTO"),
+                                            rsTemp.getDouble("PRECIO"),
+                                            rsTemp.getString("NOMBRE"));
+                                        productos.add(producto);                                        
+                                    }
+                                    
+                                    compra.setProductos(productos);                                    
+                                    compras.add(compra);
+                                }
+                                
+                                cliente.setCompras(compras);
+
+                                //CAMBIAR ESTADO A CONECTADO
+                                
+                                FrmClienteView fClienteView = new FrmClienteView();
+                                CtrlClienteView cClienteView = new CtrlClienteView(fClienteView, cliente);
+                                
+                                cClienteView.inicializar();
                             }
+                            vista.dispose();
                         } else {
                             String mensaje = "Al parecer aún no estás registrado, ¡únete a nosotros registrándote! "
                                     + "o en caso hayas olvidado tu contraseña, ¡intenta reestableciéndola!";
@@ -94,16 +143,15 @@ public class CtrlLogin {
 
         this.vista.btnRegistrarme.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {                
+            public void actionPerformed(ActionEvent e) {
                 FrmRegistrarme fRegistrarme = new FrmRegistrarme();
                 CtrlRegistrarme cRegistrarme = new CtrlRegistrarme(fRegistrarme);
                 cRegistrarme.inicializar();
-                
+
                 vista.dispose();
             }
         });
-        
-        
+
     }
 
     public void inicializar() {

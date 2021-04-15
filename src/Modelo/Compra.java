@@ -5,25 +5,26 @@ import java.util.List;
 
 public class Compra {
     private int ID;
-    private int Monto;
+    private double Monto;
     private List<Producto> Productos;
     private Cliente Cliente;
 
-    public Compra(int monto, Cliente cliente) {
-        Monto = monto;
-        Productos = new ArrayList<Producto>();
-        Cliente = cliente;
+    public Compra(int ID, double monto, Cliente cliente) {
+        this.ID = ID;
+        this.Monto = monto;
+        this.Productos = new ArrayList<Producto>();
+        this.Cliente = cliente;
     }
 
     public int getID() {
         return ID;
     }
 
-    public int getMonto() {
+    public double getMonto() {
         return Monto;
     }
 
-    public void setMonto(int monto) {
+    public void setMonto(double monto) {
         Monto = monto;
     }
 
