@@ -4,20 +4,23 @@ import Controlador.ColaboradorControllers.CtrlColaboradorView;
 import Conexion.Conexion;
 import Conexion.DBParametro;
 import Controlador.ClienteControllers.CtrlClienteView;
-import Modelo.Cliente;
 
+import Modelo.Cliente;
 import Modelo.Colaborador;
 import Modelo.Compra;
 import Modelo.Cuenta;
 import Modelo.Producto;
-import Vista.ClienteViews.FrmClienteView;
 
+import Vista.ClienteViews.FrmClienteView;
 import Vista.ColaboradorViews.FrmColaboradorView;
 import Vista.FrmLogin;
+import Vista.FrmRecuperarContraseña;
 import Vista.FrmRegistrarme;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -148,6 +151,16 @@ public class CtrlLogin {
                 CtrlRegistrarme cRegistrarme = new CtrlRegistrarme(fRegistrarme);
                 cRegistrarme.inicializar();
 
+                vista.dispose();
+            }
+        });
+        
+        this.vista.lvlOlvideContraseña.addMouseListener(new MouseAdapter(){
+            public void mouseClicked(MouseEvent e){
+                FrmRecuperarContraseña fRecuperarContraseña = new FrmRecuperarContraseña();
+                CtrlRecuperarContraseña cRecuperarContraseña = new CtrlRecuperarContraseña(fRecuperarContraseña);                
+                cRecuperarContraseña.inicializar();
+                
                 vista.dispose();
             }
         });

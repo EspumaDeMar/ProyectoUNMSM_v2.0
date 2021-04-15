@@ -22,10 +22,7 @@ public class FrmClienteView extends javax.swing.JFrame {
         menuPrincipal = new javax.swing.JMenuBar();
         menuConsultas = new javax.swing.JMenu();
         itConsultaProductos = new javax.swing.JMenuItem();
-        itConsultaClientes = new javax.swing.JMenuItem();
-        menuMantenimientos = new javax.swing.JMenu();
-        itMantenimientoProductos = new javax.swing.JMenuItem();
-        itMantenimientoClientes = new javax.swing.JMenuItem();
+        itConsultaHistorial = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
         itCerrarSesion = new javax.swing.JMenuItem();
 
@@ -81,7 +78,7 @@ public class FrmClienteView extends javax.swing.JFrame {
         itConsultaProductos.setForeground(new java.awt.Color(51, 51, 51));
         itConsultaProductos.setText("Consultar productos");
         itConsultaProductos.setBorder(null);
-        itConsultaProductos.setPreferredSize(new java.awt.Dimension(193, 25));
+        itConsultaProductos.setPreferredSize(new java.awt.Dimension(250, 25));
         itConsultaProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itConsultaProductosActionPerformed(evt);
@@ -89,57 +86,21 @@ public class FrmClienteView extends javax.swing.JFrame {
         });
         menuConsultas.add(itConsultaProductos);
 
-        itConsultaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        itConsultaClientes.setBackground(new java.awt.Color(204, 204, 204));
-        itConsultaClientes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        itConsultaClientes.setForeground(new java.awt.Color(51, 51, 51));
-        itConsultaClientes.setText("Consultar clientes");
-        itConsultaClientes.setBorder(null);
-        itConsultaClientes.setPreferredSize(new java.awt.Dimension(193, 25));
-        itConsultaClientes.addActionListener(new java.awt.event.ActionListener() {
+        itConsultaHistorial.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        itConsultaHistorial.setBackground(new java.awt.Color(204, 204, 204));
+        itConsultaHistorial.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        itConsultaHistorial.setForeground(new java.awt.Color(51, 51, 51));
+        itConsultaHistorial.setText("Consultar historial de compras");
+        itConsultaHistorial.setBorder(null);
+        itConsultaHistorial.setPreferredSize(new java.awt.Dimension(193, 25));
+        itConsultaHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itConsultaClientesActionPerformed(evt);
+                itConsultaHistorialActionPerformed(evt);
             }
         });
-        menuConsultas.add(itConsultaClientes);
+        menuConsultas.add(itConsultaHistorial);
 
         menuPrincipal.add(menuConsultas);
-
-        menuMantenimientos.setBackground(new java.awt.Color(3, 137, 57));
-        menuMantenimientos.setBorder(null);
-        menuMantenimientos.setForeground(new java.awt.Color(51, 51, 51));
-        menuMantenimientos.setText("Mantenimientos");
-        menuMantenimientos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-
-        itMantenimientoProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itMantenimientoProductos.setBackground(new java.awt.Color(204, 204, 204));
-        itMantenimientoProductos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        itMantenimientoProductos.setForeground(new java.awt.Color(51, 51, 51));
-        itMantenimientoProductos.setText("Mantenimiento de productos");
-        itMantenimientoProductos.setBorder(null);
-        itMantenimientoProductos.setPreferredSize(new java.awt.Dimension(250, 25));
-        itMantenimientoProductos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itMantenimientoProductosActionPerformed(evt);
-            }
-        });
-        menuMantenimientos.add(itMantenimientoProductos);
-
-        itMantenimientoClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itMantenimientoClientes.setBackground(new java.awt.Color(204, 204, 204));
-        itMantenimientoClientes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        itMantenimientoClientes.setForeground(new java.awt.Color(51, 51, 51));
-        itMantenimientoClientes.setText("Mantenimiento de clientes");
-        itMantenimientoClientes.setBorder(null);
-        itMantenimientoClientes.setPreferredSize(new java.awt.Dimension(193, 25));
-        itMantenimientoClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itMantenimientoClientesActionPerformed(evt);
-            }
-        });
-        menuMantenimientos.add(itMantenimientoClientes);
-
-        menuPrincipal.add(menuMantenimientos);
 
         menuSalir.setBackground(new java.awt.Color(3, 137, 57));
         menuSalir.setBorder(null);
@@ -185,17 +146,9 @@ public class FrmClienteView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itConsultaProductosActionPerformed
 
-    private void itConsultaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itConsultaClientesActionPerformed
+    private void itConsultaHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itConsultaHistorialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_itConsultaClientesActionPerformed
-
-    private void itMantenimientoProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMantenimientoProductosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itMantenimientoProductosActionPerformed
-
-    private void itMantenimientoClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMantenimientoClientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itMantenimientoClientesActionPerformed
+    }//GEN-LAST:event_itConsultaHistorialActionPerformed
 
     private void itCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itCerrarSesionActionPerformed
         // TODO add your handling code here:
@@ -239,13 +192,10 @@ public class FrmClienteView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem itCerrarSesion;
-    public javax.swing.JMenuItem itConsultaClientes;
+    public javax.swing.JMenuItem itConsultaHistorial;
     public javax.swing.JMenuItem itConsultaProductos;
-    public javax.swing.JMenuItem itMantenimientoClientes;
-    public javax.swing.JMenuItem itMantenimientoProductos;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JMenu menuConsultas;
-    public javax.swing.JMenu menuMantenimientos;
     public javax.swing.JMenuBar menuPrincipal;
     public javax.swing.JMenu menuSalir;
     public javax.swing.JDesktopPane panelEscritorio;
