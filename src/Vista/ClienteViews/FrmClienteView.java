@@ -70,6 +70,7 @@ public class FrmClienteView extends javax.swing.JFrame {
         menuConsultas.setBorder(null);
         menuConsultas.setForeground(new java.awt.Color(51, 51, 51));
         menuConsultas.setText("Consultas");
+        menuConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuConsultas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
         itConsultaProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
@@ -78,6 +79,7 @@ public class FrmClienteView extends javax.swing.JFrame {
         itConsultaProductos.setForeground(new java.awt.Color(51, 51, 51));
         itConsultaProductos.setText("Consultar productos");
         itConsultaProductos.setBorder(null);
+        itConsultaProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         itConsultaProductos.setPreferredSize(new java.awt.Dimension(250, 25));
         itConsultaProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +94,7 @@ public class FrmClienteView extends javax.swing.JFrame {
         itConsultaHistorial.setForeground(new java.awt.Color(51, 51, 51));
         itConsultaHistorial.setText("Consultar historial de compras");
         itConsultaHistorial.setBorder(null);
+        itConsultaHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         itConsultaHistorial.setPreferredSize(new java.awt.Dimension(193, 25));
         itConsultaHistorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +110,7 @@ public class FrmClienteView extends javax.swing.JFrame {
         menuSalir.setForeground(new java.awt.Color(51, 51, 51));
         menuSalir.setText("Fin");
         menuSalir.setToolTipText("");
+        menuSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuSalir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
         itCerrarSesion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));

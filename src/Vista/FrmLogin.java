@@ -49,9 +49,7 @@ public class FrmLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Correo:");
 
-        txtCorreo.setBackground(new java.awt.Color(255, 255, 255));
         txtCorreo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtCorreo.setForeground(new java.awt.Color(0, 0, 0));
         txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtCorreo.setMinimumSize(new java.awt.Dimension(100, 25));
         txtCorreo.setPreferredSize(new java.awt.Dimension(125, 25));
@@ -61,9 +59,7 @@ public class FrmLogin extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Contraseña:");
 
-        txtContraseña.setBackground(new java.awt.Color(255, 255, 255));
         txtContraseña.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        txtContraseña.setForeground(new java.awt.Color(0, 0, 0));
         txtContraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtContraseña.setMinimumSize(new java.awt.Dimension(125, 25));
         txtContraseña.setPreferredSize(new java.awt.Dimension(125, 25));

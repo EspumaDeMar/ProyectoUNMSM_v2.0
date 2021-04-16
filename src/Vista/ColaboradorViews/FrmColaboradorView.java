@@ -71,14 +71,16 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         menuConsultas.setBorder(null);
         menuConsultas.setForeground(new java.awt.Color(51, 51, 51));
         menuConsultas.setText("Consultas");
+        menuConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuConsultas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        itConsultaProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK));
+        itConsultaProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itConsultaProductos.setBackground(new java.awt.Color(204, 204, 204));
         itConsultaProductos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         itConsultaProductos.setForeground(new java.awt.Color(51, 51, 51));
         itConsultaProductos.setText("Consultar productos");
         itConsultaProductos.setBorder(null);
+        itConsultaProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         itConsultaProductos.setPreferredSize(new java.awt.Dimension(193, 25));
         itConsultaProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,12 +89,13 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         });
         menuConsultas.add(itConsultaProductos);
 
-        itConsultaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_MASK));
+        itConsultaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itConsultaClientes.setBackground(new java.awt.Color(204, 204, 204));
         itConsultaClientes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         itConsultaClientes.setForeground(new java.awt.Color(51, 51, 51));
         itConsultaClientes.setText("Consultar clientes");
         itConsultaClientes.setBorder(null);
+        itConsultaClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         itConsultaClientes.setPreferredSize(new java.awt.Dimension(193, 25));
         itConsultaClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,14 +110,16 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         menuMantenimientos.setBorder(null);
         menuMantenimientos.setForeground(new java.awt.Color(51, 51, 51));
         menuMantenimientos.setText("Mantenimientos");
+        menuMantenimientos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuMantenimientos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
-        itMantenimientoProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        itMantenimientoProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itMantenimientoProductos.setBackground(new java.awt.Color(204, 204, 204));
         itMantenimientoProductos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         itMantenimientoProductos.setForeground(new java.awt.Color(51, 51, 51));
         itMantenimientoProductos.setText("Mantenimiento de productos");
         itMantenimientoProductos.setBorder(null);
+        itMantenimientoProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         itMantenimientoProductos.setPreferredSize(new java.awt.Dimension(250, 25));
         itMantenimientoProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,12 +128,13 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         });
         menuMantenimientos.add(itMantenimientoProductos);
 
-        itMantenimientoClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        itMantenimientoClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itMantenimientoClientes.setBackground(new java.awt.Color(204, 204, 204));
         itMantenimientoClientes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         itMantenimientoClientes.setForeground(new java.awt.Color(51, 51, 51));
         itMantenimientoClientes.setText("Mantenimiento de clientes");
         itMantenimientoClientes.setBorder(null);
+        itMantenimientoClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         itMantenimientoClientes.setPreferredSize(new java.awt.Dimension(193, 25));
         itMantenimientoClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,6 +150,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         menuSalir.setForeground(new java.awt.Color(51, 51, 51));
         menuSalir.setText("Fin");
         menuSalir.setToolTipText("");
+        menuSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuSalir.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
         itCerrarSesion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));

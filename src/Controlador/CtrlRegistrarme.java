@@ -5,6 +5,7 @@ import Conexion.DBParametro;
 import Vista.FrmLogin;
 import Vista.FrmRegistrarme;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,10 +65,11 @@ public class CtrlRegistrarme {
                     
                     Conexion.setSP("SETNuevoCliente(?,?,?,?,?,?,?)", vista, parametros);
                     
-                    JOptionPane.showMessageDialog(vista, "Bienvenid@ " + nombre + " " + apellidoPaterno + "¡Se ha registrado con éxito!");
+                    JOptionPane.showMessageDialog(vista, "Bienvenid@ LAGART@ " + nombre + " " + apellidoPaterno + " ¡Se ha registrado con éxito!");
                     
                     FrmLogin fLogin = new FrmLogin();
                     CtrlLogin cLogin = new CtrlLogin(fLogin);
+                    fLogin.txtCorreo.setText(correo);
                     cLogin.inicializar();
                     
                     vista.dispose();
@@ -90,12 +92,25 @@ public class CtrlRegistrarme {
         vista.txtRepetirContraseña.addActionListener(accion);
         vista.txtDNI.addActionListener(accion);
         vista.txtCorreo.addActionListener(accion);
+        
+        vista.btnCancelar.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmLogin fLogin = new FrmLogin();
+                CtrlLogin cLogin = new CtrlLogin(fLogin);
+                fLogin.txtCorreo.requestFocus();
+                
+                cLogin.inicializar();
+                
+                vista.dispose();
+            }            
+        });
     }
     
     private boolean validarCorreo(String correo) throws Exception {
         if (!(correo.contains("@gmail.com") || correo.contains("@unmsm.edu.pe")) || correo.isBlank()) {
             vista.txtCorreo.setSelectionStart(0);
-            vista.txtCorreo.setSelectionEnd(vista.txtCorreo.getText().length());
+            vista.txtCorreo.setSelectionEnd(vista.txtCorreo.getText().length() - 1);
             throw new Exception("¡Ingresa un correo valido para continuar con el registro!");
             
         }

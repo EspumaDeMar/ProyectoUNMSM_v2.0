@@ -49,7 +49,6 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
         jLabel1.setText("Nombre:");
 
-        txtNombre.setBackground(new java.awt.Color(255, 255, 255));
         txtNombre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -57,7 +56,6 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Apellido Paterno:");
 
-        txtApellidoPaterno.setBackground(new java.awt.Color(255, 255, 255));
         txtApellidoPaterno.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtApellidoPaterno.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -65,7 +63,6 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setText("Apellido Materno:");
 
-        txtApellidoMaterno.setBackground(new java.awt.Color(255, 255, 255));
         txtApellidoMaterno.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtApellidoMaterno.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -95,7 +92,6 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("Correo:");
 
-        txtCorreo.setBackground(new java.awt.Color(255, 255, 255));
         txtCorreo.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtCorreo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -107,12 +103,10 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(102, 102, 102));
         jLabel8.setText("Repetir contraseña:");
 
-        txtContraseña.setBackground(new java.awt.Color(255, 255, 255));
         txtContraseña.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtContraseña.setToolTipText("");
         txtContraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        txtRepetirContraseña.setBackground(new java.awt.Color(255, 255, 255));
         txtRepetirContraseña.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtRepetirContraseña.setToolTipText("");
         txtRepetirContraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -122,6 +116,7 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         btnRegistrarme.setForeground(new java.awt.Color(51, 51, 51));
         btnRegistrarme.setText("Registrarme");
         btnRegistrarme.setBorder(null);
+        btnRegistrarme.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnCancelar.setBackground(new java.awt.Color(3, 137, 57));
         btnCancelar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -129,7 +124,6 @@ public class FrmRegistrarme extends javax.swing.JFrame {
         btnCancelar.setText("Cancelar");
         btnCancelar.setBorder(null);
 
-        txtDNI.setBackground(new java.awt.Color(255, 255, 255));
         txtDNI.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
