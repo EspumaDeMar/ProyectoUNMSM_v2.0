@@ -1,7 +1,7 @@
 package Controlador;
 
 import Conexion.DBParametro;
-import static Utilitario.EmitirMensaje.EnviarCorreo;
+import static Utilitario.Mensajeria.EnviarCorreo;
 import Vista.FrmLogin;
 import Vista.FrmRecuperarContraseña;
 

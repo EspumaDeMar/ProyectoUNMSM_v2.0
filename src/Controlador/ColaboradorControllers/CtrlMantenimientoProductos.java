@@ -14,6 +14,6 @@ public class CtrlMantenimientoProductos {
     }    
     
     public void inicializar(){
-        
+        this.vista.show();        
     }    
 }
