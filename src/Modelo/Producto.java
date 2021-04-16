@@ -4,11 +4,13 @@ public class Producto {
     private int ID;
     private double Precio;
     private String Nombre;
+    private String Detalle;
 
-    public Producto(int ID, double Precio, String Nombre) {
+    public Producto(int ID, double Precio, String Nombre, String Detalle) {
         this.ID = ID;
         this.Precio = Precio;
         this.Nombre = Nombre;
+        this.Detalle = Detalle;
     }
 
     public int getID() {
@@ -33,5 +35,13 @@ public class Producto {
 
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
+    }
+
+    public String getDetalle() {
+        return Detalle;
+    }
+
+    public void setDetalle(String Detalle) {
+        this.Detalle = Detalle;
     }
 }

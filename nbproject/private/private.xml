@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documents/Universidad/2021-0/ALGORÍTMICA%20II/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Controlador/CtrlRecuperarContraseña.java</file>
-            <file>file:/D:/Documents/Universidad/2021-0/ALGORÍTMICA%20II/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Utilitario/EmitirMensaje.java</file>
-            <file>file:/D:/Documents/Universidad/2021-0/ALGORÍTMICA%20II/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Vista/FrmRecuperarContraseña.java</file>
+            <file>file:/E:/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Controlador/CtrlRegistrarme.java</file>
+            <file>file:/E:/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Controlador/CtrlLogin.java</file>
+            <file>file:/E:/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Controlador/CtrlRecuperarContraseña.java</file>
+            <file>file:/E:/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Conexion/Conexion.java</file>
+            <file>file:/E:/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Controlador/ClienteControllers/CtrlClienteView.java</file>
+            <file>file:/E:/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Vista/FrmRecuperarContraseña.java</file>
         </group>
     </open-files>
 </project-private>

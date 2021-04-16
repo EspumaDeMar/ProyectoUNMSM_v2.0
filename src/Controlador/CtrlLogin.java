@@ -109,7 +109,8 @@ public class CtrlLogin {
                                         Producto producto = new Producto(
                                             rsTemp.getInt("ID_PRODUCTO"),
                                             rsTemp.getDouble("PRECIO"),
-                                            rsTemp.getString("NOMBRE"));
+                                            rsTemp.getString("NOMBRE"),
+                                            rsTemp.getString("DETALLE"));
                                         productos.add(producto);                                        
                                     }
                                     

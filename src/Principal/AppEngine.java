@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 public class AppEngine {
 
-    public static List<Producto> productos = new ArrayList<Producto>();
+    private static List<Producto> productos = new ArrayList<Producto>();
 
     public static List<Producto> getProductos(Component componente) {
         try {
@@ -21,9 +21,10 @@ public class AppEngine {
             ResultSet rs = Conexion.GetStatement(SQL, componente);
 
             while (rs.next()) {
-                Producto producto = new Producto(rs.getInt("ID"),
+                Producto producto = new Producto(rs.getInt("ID_PRODUCTO"),
                                                  rs.getDouble("PRECIO"),
-                                                 rs.getString("NOMBRE"));
+                                                 rs.getString("NOMBRE"),
+                                                 rs.getString("DETALLE"));
                 productos.add(producto);
             }
             return productos;

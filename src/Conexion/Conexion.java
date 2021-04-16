@@ -39,15 +39,15 @@ public class Conexion {
      * @return {@code Connection}
      */
     private static Connection getConexion() {
-        String url = "jdbc:sqlserver://PC-DIEGO:1433;"
+        /*String url = "jdbc:sqlserver://PC-DIEGO:1433;"
                 + "database=ProyectoUNMSM;"
                 + "user=USERSQL;"
-                + "password=soloesunjuego;";
+                + "password=soloesunjuego;";*/
 
-        /*String url = "jdbc:sqlserver://SISTEMAS14:1433;"
+        String url = "jdbc:sqlserver://SISTEMAS14:1433;"
                 + "database=ProyectoUNMSM;"
                 + "user=unmsm;"
-                + "password=sqlserver;";*/
+                + "password=sqlserver;";
         try {
             con = DriverManager.getConnection(url);
             return con;
