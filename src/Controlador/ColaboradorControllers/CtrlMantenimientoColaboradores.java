@@ -71,7 +71,7 @@ public class CtrlMantenimientoColaboradores {
                 parametros.add(new DBParametro("@CARGO", cargo));
                 parametros.add(new DBParametro("@TURNO", turno));
                 parametros.add(new DBParametro("@DES_TURNO", descripcionTurno));
-                parametros.add(new DBParametro("@@USUARIO_MODIFICACION", colaborador.getID()));
+                parametros.add(new DBParametro("@USUARIO_MODIFICACION", colaborador.getID()));
 
                 Conexion.setSP("SETActualizarColaborador(?,?,?,?,?,?,?,?,?,?,?)", parametros);
                 JOptionPane.showMessageDialog(vista, "Se actualizaron los datos del colaborador exitósamente.", "Mantenimiento de colaboradores", 1);
@@ -131,8 +131,11 @@ public class CtrlMantenimientoColaboradores {
                     parametros.add(new DBParametro("@ID", ID));
 
                     Conexion.setSP("SETEliminarColaborador(?)", parametros);
-                    
+
                     JOptionPane.showMessageDialog(vista, "Se ha concluido el proceso exitósamente.", "Mantenimiento de colaboradores", 1);
+
+                    obtenerColaboradores();
+                    limpiarDatos();
                 }
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente erro: " + ex.getMessage(), "SQL", 0);
