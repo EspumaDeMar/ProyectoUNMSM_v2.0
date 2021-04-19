@@ -1,12 +1,14 @@
 package Controlador.ColaboradorControllers;
 
 import Controlador.CtrlLogin;
+
 import Modelo.Colaborador;
 
 import Vista.ColaboradorViews.FrmColaboradorView;
 import Vista.ColaboradorViews.FrmConsultarClientes;
 import Vista.ColaboradorViews.FrmConsultarProductos;
 import Vista.ColaboradorViews.FrmMantenimientoClientes;
+import Vista.ColaboradorViews.FrmMantenimientoColaboradores;
 import Vista.ColaboradorViews.FrmMantenimientoProductos;
 import Vista.FrmLogin;
 
@@ -79,6 +81,17 @@ public class CtrlColaboradorView {
 
                 CtrlMantenimientoProductos mProductos = new CtrlMantenimientoProductos(fmProductos, colaborador);
                 mProductos.inicializar();
+            }
+        });
+        
+        vista.itMantenimientoColaboradores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmMantenimientoColaboradores fmColaboradores = new FrmMantenimientoColaboradores();
+                redimensionar(fmColaboradores);
+
+                CtrlMantenimientoColaboradores cColaboradores = new CtrlMantenimientoColaboradores(fmColaboradores, colaborador);
+                cColaboradores.inicializar();
             }
         });
     }

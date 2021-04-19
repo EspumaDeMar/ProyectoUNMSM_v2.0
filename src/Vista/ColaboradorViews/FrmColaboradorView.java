@@ -24,6 +24,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         menuMantenimientos = new javax.swing.JMenu();
         itMantenimientoProductos = new javax.swing.JMenuItem();
         itMantenimientoClientes = new javax.swing.JMenuItem();
+        itMantenimientoColaboradores = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
         itCerrarSesion = new javax.swing.JMenuItem();
 
@@ -143,6 +144,21 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         });
         menuMantenimientos.add(itMantenimientoClientes);
 
+        itMantenimientoColaboradores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itMantenimientoColaboradores.setBackground(new java.awt.Color(204, 204, 204));
+        itMantenimientoColaboradores.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        itMantenimientoColaboradores.setForeground(new java.awt.Color(51, 51, 51));
+        itMantenimientoColaboradores.setText("Mantenimiento de colaboradores");
+        itMantenimientoColaboradores.setBorder(null);
+        itMantenimientoColaboradores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        itMantenimientoColaboradores.setPreferredSize(new java.awt.Dimension(193, 25));
+        itMantenimientoColaboradores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itMantenimientoColaboradoresActionPerformed(evt);
+            }
+        });
+        menuMantenimientos.add(itMantenimientoColaboradores);
+
         menuPrincipal.add(menuMantenimientos);
 
         menuSalir.setBackground(new java.awt.Color(3, 137, 57));
@@ -206,6 +222,10 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itCerrarSesionActionPerformed
 
+    private void itMantenimientoColaboradoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMantenimientoColaboradoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itMantenimientoColaboradoresActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -246,6 +266,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
     public javax.swing.JMenuItem itConsultaClientes;
     public javax.swing.JMenuItem itConsultaProductos;
     public javax.swing.JMenuItem itMantenimientoClientes;
+    public javax.swing.JMenuItem itMantenimientoColaboradores;
     public javax.swing.JMenuItem itMantenimientoProductos;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JMenu menuConsultas;

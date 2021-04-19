@@ -46,7 +46,7 @@ public class CtrlRecuperarContraseña {
                     parametros.add(new DBParametro("correo", correo));
                     parametros.add(new DBParametro("DNI", DNI));
 
-                    ResultSet rs = Conexion.Conexion.getSP("GETRecuperarContraseña(?,?,?)", vista, parametros);
+                    ResultSet rs = Conexion.Conexion.getSP("GETRecuperarContraseña(?,?,?)", parametros);
                     while (rs.next()) {
                         if (rs.getInt("RESULT") == 1) {
                             String contraseña = rs.getString("CONTRASEÑA");
@@ -80,9 +80,9 @@ public class CtrlRecuperarContraseña {
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(vista, "!Ingrese un número de DNI válido!", "Recuperar contraseña", 0);
                 } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.toString(), "SQL", 0);
+                    JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.getMessage(), "SQL", 0);
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(vista, ex.getMessage(), "Recuperar contraseña", 0);
+                    JOptionPane.showMessageDialog(vista, ex.getMessage(), "Error", 0);
                 }
             }
         };

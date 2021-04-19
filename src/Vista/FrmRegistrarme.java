@@ -4,9 +4,6 @@ public class FrmRegistrarme extends javax.swing.JFrame {
 
     public FrmRegistrarme() {
         initComponents();
-        
-        this.rdoGrupoSexo.add(this.rdoMasculino);
-        this.rdoGrupoSexo.add(this.rdoFemenino);
     }
 
     /**
@@ -276,7 +273,7 @@ public class FrmRegistrarme extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JRadioButton rdoFemenino;
-    private javax.swing.ButtonGroup rdoGrupoSexo;
+    public javax.swing.ButtonGroup rdoGrupoSexo;
     public javax.swing.JRadioButton rdoMasculino;
     public javax.swing.JTextField txtApellidoMaterno;
     public javax.swing.JTextField txtApellidoPaterno;

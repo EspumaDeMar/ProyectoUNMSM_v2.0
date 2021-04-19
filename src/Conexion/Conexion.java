@@ -38,7 +38,7 @@ public class Conexion {
      *
      * @return {@code Connection}
      */
-    private static Connection getConexion() {
+    private static Connection getConexion() throws SQLException {
         /*String url = "jdbc:sqlserver://PC-DIEGO:1433;"
                 + "database=ProyectoUNMSM;"
                 + "user=USERSQL;"
@@ -48,13 +48,8 @@ public class Conexion {
                 + "database=ProyectoUNMSM;"
                 + "user=unmsm;"
                 + "password=sqlserver;";
-        try {
-            con = DriverManager.getConnection(url);
-            return con;
-        } catch (SQLException e) {
-            System.out.println(e.toString());
-            return null;
-        }
+        con = DriverManager.getConnection(url);
+        return con;
     }
 
     /**
@@ -66,85 +61,65 @@ public class Conexion {
      * @param componente
      * @return {@code ResultSet}
      */
-    public static ResultSet GetStatement(String SQL, Component componente) {
-        try {
-            con = Conexion.getConexion();
-            PreparedStatement ps = con.prepareStatement(SQL);
-            ResultSet rs = ps.executeQuery();
+    public static ResultSet GetStatement(String SQL) throws SQLException {
+        con = Conexion.getConexion();
+        PreparedStatement ps = con.prepareStatement(SQL);
+        ResultSet rs = ps.executeQuery();
 
-            return rs;
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(componente, e.toString());
-            return null;
-        }
+        return rs;
     }
 
     /**
      *
-     * Es un método de tipo estático que recibe un query para poder ejecutar una acción
-     * sin retorno de datos.
+     * Es un método de tipo estático que recibe un query para poder ejecutar una
+     * acción sin retorno de datos.
      *
      * @param SQL
      * @param componente
      */
-    public static void SetStatement(String SQL, Component componente) {
-        try {
-            con = Conexion.getConexion();
-            PreparedStatement ps = con.prepareStatement(SQL);
-            ps.executeUpdate();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(componente, e.toString());
-        }
+    public static void SetStatement(String SQL) throws SQLException {
+        con = Conexion.getConexion();
+        PreparedStatement ps = con.prepareStatement(SQL);
+        ps.executeUpdate();
     }
 
     /**
      * *
      *
-     * Es un método de tipo estático que recibe un Stored Procedure y una lista 
+     * Es un método de tipo estático que recibe un Stored Procedure y una lista
      * de parámetros para poder retornar un conjunto de datos.
-     * 
+     *
      * @param StoredProcedure
      * @param componente
      * @param parametros
      * @return {@code ResultSet}
      */
-    public static ResultSet getSP(String StoredProcedure, Component componente, List<DBParametro> parametros) {
-        try {
-            con = Conexion.getConexion();
-            CallableStatement cs = con.prepareCall("{call " + StoredProcedure + "}");
-            for (DBParametro parametro : parametros) {
-                cs.setObject(parametro.getNombre(), parametro.getValor());
-            }
-            cs.execute();
-            ResultSet rs = cs.getResultSet();
-            return rs;
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(componente, e.toString());
-            System.out.println(e.toString());
-            return null;
+    public static ResultSet getSP(String StoredProcedure, List<DBParametro> parametros) throws SQLException {
+        con = Conexion.getConexion();
+        CallableStatement cs = con.prepareCall("{call " + StoredProcedure + "}");
+        for (DBParametro parametro : parametros) {
+            cs.setObject(parametro.getNombre(), parametro.getValor());
         }
+        cs.execute();
+        ResultSet rs = cs.getResultSet();
+        return rs;
     }
 
     /**
      * *
-     * Es un método de tipo estático que recibe un Stored Procedure y una lista 
+     * Es un método de tipo estático que recibe un Stored Procedure y una lista
      * de parámetros para poder ejecutar una acción sin retorno de datos.
+     *
      * @param StoredProcedure
      * @param componente
      * @param parametros
      */
-    public static void setSP(String StoredProcedure, Component componente, List<DBParametro> parametros) {
-        try {
-            con = Conexion.getConexion();
-            CallableStatement cs = con.prepareCall("{call " + StoredProcedure + "}");
-            for (DBParametro parametro : parametros) {
-                cs.setObject(parametro.getNombre(), parametro.getValor());
-            }
-            cs.executeUpdate();
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(componente, e.toString());
+    public static void setSP(String StoredProcedure, List<DBParametro> parametros) throws SQLException {
+        con = Conexion.getConexion();
+        CallableStatement cs = con.prepareCall("{call " + StoredProcedure + "}");
+        for (DBParametro parametro : parametros) {
+            cs.setObject(parametro.getNombre(), parametro.getValor());
         }
+        cs.executeUpdate();
     }
 }

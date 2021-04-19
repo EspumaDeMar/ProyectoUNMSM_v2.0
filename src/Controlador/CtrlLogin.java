@@ -55,7 +55,7 @@ public class CtrlLogin {
                     parametros.add(new DBParametro("correo", correo));
                     parametros.add(new DBParametro("contraseña", contraseña));
 
-                    ResultSet rs = Conexion.getSP("GETLogin(?,?)", vista, parametros);
+                    ResultSet rs = Conexion.getSP("GETLogin(?,?)", parametros);
 
                     while (rs.next()) {
                         if (rs.getInt("RESULT") == 1) {
@@ -91,7 +91,7 @@ public class CtrlLogin {
 
                                 parametros.clear();
                                 parametros.add(new DBParametro("ID", cliente.getID()));
-                                rs = Conexion.getSP("GETComprasDeCliente(?)", vista, parametros);
+                                rs = Conexion.getSP("GETComprasDeCliente(?)", parametros);
                                 
                                 parametros.clear();
                                 List<Compra> compras = new ArrayList<Compra>();
@@ -102,7 +102,7 @@ public class CtrlLogin {
                                             cliente);
                                     
                                     parametros.add(new DBParametro("ID_COMPRA", compra.getID()));
-                                    ResultSet rsTemp = Conexion.getSP("GETProductosDeCompra(?)", vista, parametros);
+                                    ResultSet rsTemp = Conexion.getSP("GETProductosDeCompra(?)", parametros);
                                     
                                     List<Producto> productos = new ArrayList<Producto>();
                                     while(rsTemp.next()){
@@ -136,7 +136,9 @@ public class CtrlLogin {
                         }
                     }
                 } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.toString(), "SQL", 0);
+                    JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.getMessage(), "SQL", 0);
+                } catch (Exception ex){
+                    JOptionPane.showMessageDialog(vista, ex.getMessage(), "Error", 0);
                 }
             }
         };
