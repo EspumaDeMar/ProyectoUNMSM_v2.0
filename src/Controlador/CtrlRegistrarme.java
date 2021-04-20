@@ -53,13 +53,13 @@ public class CtrlRegistrarme {
                     }
 
                     List<DBParametro> parametros = new ArrayList<DBParametro>();
-                    parametros.add(new DBParametro("correo", correo));
-                    parametros.add(new DBParametro("contraseña", contraseña));
-                    parametros.add(new DBParametro("DNI", DNI));
-                    parametros.add(new DBParametro("nombre", nombre));
-                    parametros.add(new DBParametro("apellidoMaterno", apellidoMaterno));
-                    parametros.add(new DBParametro("apellidoPaterno", apellidoPaterno));
-                    parametros.add(new DBParametro("sexo", sexo));
+                    parametros.add(new DBParametro("@correo", correo));
+                    parametros.add(new DBParametro("@contraseña", contraseña));
+                    parametros.add(new DBParametro("@DNI", DNI));
+                    parametros.add(new DBParametro("@nombre", nombre));
+                    parametros.add(new DBParametro("@apellidoMaterno", apellidoMaterno));
+                    parametros.add(new DBParametro("@apellidoPaterno", apellidoPaterno));
+                    parametros.add(new DBParametro("@sexo", sexo));
 
                     Conexion.setSP("SETNuevoCliente(?,?,?,?,?,?,?)", parametros);
 

@@ -61,7 +61,7 @@ public class AppEngine {
     }
 
     public static void iniciarSesion(int ID) throws SQLException {
-        String SQL = "UPDATE FROM Cuenta SET CONECTADO = 1 WHERE Cuenta.ID = " + ID;
+        String SQL = "UPDATE Cuenta SET CONECTADO = 1 WHERE Cuenta.ID = " + ID;
         Conexion.SetStatement(SQL);
     }
 }

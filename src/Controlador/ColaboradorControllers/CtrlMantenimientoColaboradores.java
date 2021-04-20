@@ -49,7 +49,7 @@ public class CtrlMantenimientoColaboradores {
         try {
             obtenerColaboradores();
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente erro: " + ex.getMessage(), "SQL", 0);
+            JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente error: " + ex.getMessage(), "SQL", 0);
         }
 
         vista.btnLimpiar.addActionListener((ActionEvent e) -> {
@@ -74,12 +74,12 @@ public class CtrlMantenimientoColaboradores {
                 parametros.add(new DBParametro("@USUARIO_MODIFICACION", colaborador.getID()));
 
                 Conexion.setSP("SETActualizarColaborador(?,?,?,?,?,?,?,?,?,?,?)", parametros);
-                JOptionPane.showMessageDialog(vista, "Se actualizaron los datos del colaborador exitósamente.", "Mantenimiento de colaboradores", 1);
+                JOptionPane.showMessageDialog(vista, "Se actualizaron los datos del colaborador exitosamente.", "Mantenimiento de colaboradores", 1);
 
                 obtenerColaboradores();
                 limpiarDatos();
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente erro: " + ex.getMessage(), "SQL", 0);
+                JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente error: " + ex.getMessage(), "SQL", 0);
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(vista, "!Ingrese un número de DNI válido!", "Mantenimiento de colaboradores", 0);
             } catch (Exception ex) {
@@ -106,12 +106,12 @@ public class CtrlMantenimientoColaboradores {
 
                 Conexion.setSP("SETNuevoColaborador(?,?,?,?,?,?,?,?,?,?,?)", parametros);
 
-                JOptionPane.showMessageDialog(vista, "Se ha concluido el proceso exitósamente.", "Mantenimiento de colaboradores", 1);
+                JOptionPane.showMessageDialog(vista, "Se ha concluido el proceso exitosamente.", "Mantenimiento de colaboradores", 1);
 
                 obtenerColaboradores();
                 limpiarDatos();
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente erro: " + ex.getMessage(), "SQL", 0);
+                JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente error: " + ex.getMessage(), "SQL", 0);
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(vista, "!Ingrese un número de DNI válido!", "Mantenimiento de colaboradores", 0);
             } catch (Exception ex) {
@@ -132,13 +132,13 @@ public class CtrlMantenimientoColaboradores {
 
                     Conexion.setSP("SETEliminarColaborador(?)", parametros);
 
-                    JOptionPane.showMessageDialog(vista, "Se ha concluido el proceso exitósamente.", "Mantenimiento de colaboradores", 1);
+                    JOptionPane.showMessageDialog(vista, "Se ha concluido el proceso exitosamente.", "Mantenimiento de colaboradores", 1);
 
                     obtenerColaboradores();
                     limpiarDatos();
                 }
             } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente erro: " + ex.getMessage(), "SQL", 0);
+                JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente error: " + ex.getMessage(), "SQL", 0);
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(vista, "!Ingrese un número de DNI válido!", "Mantenimiento de colaboradores", 0);
             } catch (Exception ex) {
