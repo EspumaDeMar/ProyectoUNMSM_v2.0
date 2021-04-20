@@ -10,6 +10,7 @@ import Modelo.Colaborador;
 import Modelo.Compra;
 import Modelo.Cuenta;
 import Modelo.Producto;
+import Principal.AppEngine;
 
 import Vista.ClienteViews.FrmClienteView;
 import Vista.ColaboradorViews.FrmColaboradorView;
@@ -75,7 +76,8 @@ public class CtrlLogin {
                                     colaborador.setTurno(("NOCHE"));
                                 }
 
-                                //CAMBIAR ESTADO A CONECTADO
+                                AppEngine.iniciarSesion(colaborador.getID());
+                                
                                 FrmColaboradorView fColaboradorV = new FrmColaboradorView();
                                 CtrlColaboradorView cColaboradorV = new CtrlColaboradorView(fColaboradorV, colaborador);
                                 cColaboradorV.inicializar();
@@ -120,7 +122,7 @@ public class CtrlLogin {
                                 
                                 cliente.setCompras(compras);
 
-                                //CAMBIAR ESTADO A CONECTADO
+                                AppEngine.iniciarSesion(cliente.getID());
                                 
                                 FrmClienteView fClienteView = new FrmClienteView();
                                 CtrlClienteView cClienteView = new CtrlClienteView(fClienteView, cliente);

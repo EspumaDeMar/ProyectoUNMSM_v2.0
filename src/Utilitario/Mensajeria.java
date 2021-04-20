@@ -17,7 +17,7 @@ public class Mensajeria {
      * @param componente
      * @throws java.lang.Exception
      */
-    public static void EnviarCorreo(String destinatario, String mensaje, Component componente) throws Exception {
+    public static void EnviarCorreo(String destinatario, String asunto, String mensaje, Component componente) throws Exception {
         Properties propiedades = new Properties();
         propiedades.setProperty("mail.smtp.host", "smtp.gmail.com");
         propiedades.setProperty("mail.smtp.starttls.enable", "true");
@@ -27,7 +27,6 @@ public class Mensajeria {
         Session sesion = Session.getDefaultInstance(propiedades);
         String emisor = "lagartostoresac@gmail.com";
         String contraseñaEmisor = "codigolagarto";
-        String asunto = "Recuperación de contraseña";
 
         MimeMessage mail = new MimeMessage(sesion);
         mail.setFrom(new InternetAddress(emisor));

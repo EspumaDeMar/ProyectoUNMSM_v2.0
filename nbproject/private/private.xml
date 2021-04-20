@@ -5,12 +5,17 @@
             <url>src/Controlador/CtrlRegistrarme.java</url>
             <bookmark id="1">
                 <name/>
-                <line>87</line>
+                <line>89</line>
                 <key/>
             </bookmark>
         </file>
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/Documents/Universidad/2021-0/ALGORÍTMICA%20II/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Vista/FrmRegistrarme.java</file>
+            <file>file:/D:/Documents/Universidad/2021-0/ALGORÍTMICA%20II/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Controlador/ColaboradorControllers/CtrlMantenimientoColaboradores.java</file>
+            <file>file:/D:/Documents/Universidad/2021-0/ALGORÍTMICA%20II/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Vista/ColaboradorViews/FrmMantenimientoColaboradores.java</file>
+            <file>file:/D:/Documents/Universidad/2021-0/ALGORÍTMICA%20II/ProyectoUNMSM/ProyectoUNMSM_v2.0/src/Controlador/CtrlRegistrarme.java</file>
+        </group>
     </open-files>
 </project-private>

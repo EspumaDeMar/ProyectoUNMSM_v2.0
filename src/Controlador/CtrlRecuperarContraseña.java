@@ -51,6 +51,8 @@ public class CtrlRecuperarContraseña {
                         if (rs.getInt("RESULT") == 1) {
                             String contraseña = rs.getString("CONTRASEÑA");
                             
+                            String asunto = "Recuperación de contraseña";
+                            
                             String mensaje = "<html><h1>&nbsp;¡Hola <b>" + nombre + "!</b></h1>"
                                            + "<p>&nbsp;Al parecer olvidaste que eras un lagart@, JAAAAA!<br>"
                                            + "&nbsp;y también tu contraseña...<br>"
@@ -59,7 +61,7 @@ public class CtrlRecuperarContraseña {
                                            + "&nbsp;No te olvides, CÓDIGO: <b>LAGARTO</b><br>"
                                            + "&nbsp;Saludos mi rey!</html>";
 
-                            EnviarCorreo(correo, mensaje, vista);
+                            EnviarCorreo(correo, asunto, mensaje, vista);
 
                             JOptionPane.showMessageDialog(vista, "Hemos enviado un email a tu correo con tu contraseña. ¡Revísalo e inicia sesión!", "Recuperar contraseña", 1);
 
@@ -92,17 +94,14 @@ public class CtrlRecuperarContraseña {
         vista.txtNombre.addActionListener(accion);
         vista.btnRecuperarContraseña.addActionListener(accion);
 
-        vista.btnCancelar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                FrmLogin fLogin = new FrmLogin();
-                CtrlLogin cLogin = new CtrlLogin(fLogin);
-                fLogin.txtCorreo.requestFocus();
-
-                cLogin.inicializar();
-
-                vista.dispose();
-            }
+        vista.btnCancelar.addActionListener((ActionEvent e) -> {
+            FrmLogin fLogin = new FrmLogin();
+            CtrlLogin cLogin = new CtrlLogin(fLogin);
+            fLogin.txtCorreo.requestFocus();
+            
+            cLogin.inicializar();
+            
+            vista.dispose();
         });
     }
 
@@ -111,7 +110,6 @@ public class CtrlRecuperarContraseña {
             vista.txtCorreo.setSelectionStart(0);
             vista.txtCorreo.setSelectionEnd(vista.txtCorreo.getText().length() - 1);
             throw new Exception("¡Ingresa un correo valido para continuar con el proceso!");
-
         }
         return true;
     }

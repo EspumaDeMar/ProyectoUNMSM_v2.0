@@ -5,13 +5,11 @@ import Modelo.Colaborador;
 import Modelo.Cuenta;
 
 import Modelo.Producto;
-import java.awt.Component;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 public class AppEngine {
 
@@ -19,7 +17,6 @@ public class AppEngine {
     private static List<Colaborador> colaboradores = new ArrayList<Colaborador>();
 
     public static List<Producto> getProductos() throws SQLException {
-
         productos.clear();
 
         String SQL = "SELECT * FROM Producto";
@@ -61,5 +58,10 @@ public class AppEngine {
             colaboradores.add(colaborador);
         }
         return colaboradores;
+    }
+
+    public static void iniciarSesion(int ID) throws SQLException {
+        String SQL = "UPDATE FROM Cuenta SET CONECTADO = 1 WHERE Cuenta.ID = " + ID;
+        Conexion.SetStatement(SQL);
     }
 }

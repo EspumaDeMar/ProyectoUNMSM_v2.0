@@ -2,10 +2,10 @@ package Controlador;
 
 import Conexion.Conexion;
 import Conexion.DBParametro;
+import Utilitario.Mensajeria;
 import Vista.FrmLogin;
 import Vista.FrmRegistrarme;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,14 +64,16 @@ public class CtrlRegistrarme {
                     Conexion.setSP("SETNuevoCliente(?,?,?,?,?,?,?)", parametros);
 
                     JOptionPane.showMessageDialog(vista, "Bienvenid@ LAGART@ " + nombre + " " + apellidoPaterno + " ¡Se ha registrado con éxito!");
-
+                    
+                    String mensaje = "";
+                    Mensajeria.EnviarCorreo(correo, "Bienvenid@ LAGART@", mensaje, vista);
+                    
                     FrmLogin fLogin = new FrmLogin();
                     CtrlLogin cLogin = new CtrlLogin(fLogin);
                     fLogin.txtCorreo.setText(correo);
                     cLogin.inicializar();
 
                     vista.dispose();
-
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(vista, "!Ingrese un número de DNI válido!", "Registro", 0);
                 } catch (SQLException ex) {
@@ -91,17 +93,14 @@ public class CtrlRegistrarme {
         vista.txtDNI.addActionListener(accion);
         vista.txtCorreo.addActionListener(accion);
 
-        vista.btnCancelar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                FrmLogin fLogin = new FrmLogin();
-                CtrlLogin cLogin = new CtrlLogin(fLogin);
-                fLogin.txtCorreo.requestFocus();
-
-                cLogin.inicializar();
-
-                vista.dispose();
-            }
+        vista.btnCancelar.addActionListener((ActionEvent e) -> {
+            FrmLogin fLogin = new FrmLogin();
+            CtrlLogin cLogin = new CtrlLogin(fLogin);
+            fLogin.txtCorreo.requestFocus();
+            
+            cLogin.inicializar();
+            
+            vista.dispose();
         });
     }
 
@@ -110,7 +109,6 @@ public class CtrlRegistrarme {
             vista.txtCorreo.setSelectionStart(0);
             vista.txtCorreo.setSelectionEnd(vista.txtCorreo.getText().length() - 1);
             throw new Exception("¡Ingresa un correo valido para continuar con el registro!");
-
         }
         return true;
     }
@@ -120,7 +118,6 @@ public class CtrlRegistrarme {
             vista.txtRepetirContraseña.setSelectionStart(0);
             vista.txtRepetirContraseña.setSelectionEnd(vista.txtRepetirContraseña.getText().length());
             throw new Exception("¡Las dos contraseñas no coinciden! Recuerda no usar espacios en blanco.");
-
         }
         return true;
     }
