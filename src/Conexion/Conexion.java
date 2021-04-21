@@ -1,7 +1,5 @@
 package Conexion;
 
-import java.awt.Component;
-
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,7 +9,6 @@ import java.sql.SQLException;
 
 import java.util.List;
 
-import javax.swing.JOptionPane;
 
 /**
  * <h1>Conexion</h1>
@@ -58,8 +55,8 @@ public class Conexion {
      * conjunto de datos.
      *
      * @param SQL
-     * @param componente
      * @return {@code ResultSet}
+     * @throws java.sql.SQLException
      */
     public static ResultSet GetStatement(String SQL) throws SQLException {
         con = Conexion.getConexion();
@@ -75,7 +72,7 @@ public class Conexion {
      * acción sin retorno de datos.
      *
      * @param SQL
-     * @param componente
+     * @throws java.sql.SQLException
      */
     public static void SetStatement(String SQL) throws SQLException {
         con = Conexion.getConexion();
@@ -90,9 +87,9 @@ public class Conexion {
      * de parámetros para poder retornar un conjunto de datos.
      *
      * @param StoredProcedure
-     * @param componente
      * @param parametros
      * @return {@code ResultSet}
+     * @throws java.sql.SQLException
      */
     public static ResultSet getSP(String StoredProcedure, List<DBParametro> parametros) throws SQLException {
         con = Conexion.getConexion();
@@ -111,8 +108,8 @@ public class Conexion {
      * de parámetros para poder ejecutar una acción sin retorno de datos.
      *
      * @param StoredProcedure
-     * @param componente
      * @param parametros
+     * @throws java.sql.SQLException
      */
     public static void setSP(String StoredProcedure, List<DBParametro> parametros) throws SQLException {
         con = Conexion.getConexion();

@@ -27,7 +27,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         menuSalir = new javax.swing.JMenu();
         itCerrarSesion = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Lagarto Store - Colaboradores");
         setSize(new java.awt.Dimension(700, 575));
 

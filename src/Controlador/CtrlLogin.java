@@ -1,16 +1,17 @@
 package Controlador;
 
-import Controlador.ColaboradorControllers.CtrlColaboradorView;
 import Conexion.Conexion;
 import Conexion.DBParametro;
 import Controlador.ClienteControllers.CtrlClienteView;
+import Controlador.ColaboradorControllers.CtrlColaboradorView;
+
+import Principal.AppEngine;
 
 import Modelo.Cliente;
 import Modelo.Colaborador;
 import Modelo.Compra;
 import Modelo.Cuenta;
 import Modelo.Producto;
-import Principal.AppEngine;
 
 import Vista.ClienteViews.FrmClienteView;
 import Vista.ColaboradorViews.FrmColaboradorView;
@@ -19,15 +20,17 @@ import Vista.FrmRecuperarContraseña;
 import Vista.FrmRegistrarme;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class CtrlLogin {
@@ -77,8 +80,23 @@ public class CtrlLogin {
                                 }
 
                                 AppEngine.iniciarSesion(colaborador.getID());
-                                
-                                FrmColaboradorView fColaboradorV = new FrmColaboradorView();
+                                colaborador.getCuenta().setConectado(true);
+
+                                FrmColaboradorView fColaboradorV = new FrmColaboradorView() {
+                                    @Override
+                                    public void dispose() {
+                                        try {
+                                            getFrame().setVisible(true);
+                                            getFrame().setLocationRelativeTo(null);
+
+                                            AppEngine.cerrarSesion(colaborador.getID());
+
+                                            super.dispose();
+                                        } catch (SQLException ex) {
+                                            JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.getMessage(), "SQL", 0);
+                                        }
+                                    }
+                                };
                                 CtrlColaboradorView cColaboradorV = new CtrlColaboradorView(fColaboradorV, colaborador);
                                 cColaboradorV.inicializar();
                             } else {
@@ -94,7 +112,7 @@ public class CtrlLogin {
                                 parametros.clear();
                                 parametros.add(new DBParametro("ID", cliente.getID()));
                                 rs = Conexion.getSP("GETComprasDeCliente(?)", parametros);
-                                
+
                                 parametros.clear();
                                 List<Compra> compras = new ArrayList<Compra>();
                                 while (rs.next()) {
@@ -102,31 +120,46 @@ public class CtrlLogin {
                                             rs.getInt("ID_COMPRA"),
                                             rs.getDouble("MONTO"),
                                             cliente);
-                                    
+
                                     parametros.add(new DBParametro("ID_COMPRA", compra.getID()));
                                     ResultSet rsTemp = Conexion.getSP("GETProductosDeCompra(?)", parametros);
-                                    
+
                                     List<Producto> productos = new ArrayList<Producto>();
-                                    while(rsTemp.next()){
+                                    while (rsTemp.next()) {
                                         Producto producto = new Producto(
-                                            rsTemp.getInt("ID_PRODUCTO"),
-                                            rsTemp.getDouble("PRECIO"),
-                                            rsTemp.getString("NOMBRE"),
-                                            rsTemp.getString("DETALLE"));
-                                        productos.add(producto);                                        
+                                                rsTemp.getInt("ID_PRODUCTO"),
+                                                rsTemp.getDouble("PRECIO"),
+                                                rsTemp.getString("NOMBRE"),
+                                                rsTemp.getString("DETALLE"));
+                                        productos.add(producto);
                                     }
-                                    
-                                    compra.setProductos(productos);                                    
+
+                                    compra.setProductos(productos);
                                     compras.add(compra);
                                 }
-                                
+
                                 cliente.setCompras(compras);
 
                                 AppEngine.iniciarSesion(cliente.getID());
-                                
-                                FrmClienteView fClienteView = new FrmClienteView();
+                                cliente.getCuenta().setConectado(true);
+
+                                FrmClienteView fClienteView = new FrmClienteView() {
+                                    @Override
+                                    public void dispose() {
+                                        try {
+                                            getFrame().setVisible(true);
+                                            getFrame().setLocationRelativeTo(null);
+
+                                            AppEngine.cerrarSesion(cliente.getID());
+
+                                            super.dispose();
+                                        } catch (SQLException ex) {
+                                            JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.getMessage(), "SQL", 0);
+                                        }
+                                    }
+                                };
                                 CtrlClienteView cClienteView = new CtrlClienteView(fClienteView, cliente);
-                                
+
                                 cClienteView.inicializar();
                             }
                             vista.dispose();
@@ -139,7 +172,7 @@ public class CtrlLogin {
                     }
                 } catch (SQLException ex) {
                     JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.getMessage(), "SQL", 0);
-                } catch (Exception ex){
+                } catch (Exception ex) {
                     JOptionPane.showMessageDialog(vista, ex.getMessage(), "Error", 0);
                 }
             }
@@ -149,27 +182,46 @@ public class CtrlLogin {
         this.vista.txtCorreo.addActionListener(accion);
         this.vista.txtContraseña.addActionListener(accion);
 
-        this.vista.btnRegistrarme.addActionListener(new ActionListener() {
+        this.vista.btnRegistrarme.addActionListener((ActionEvent e) -> {
+            FrmRegistrarme fRegistrarme = new FrmRegistrarme() {
+                @Override
+                public void dispose() {
+                    getFrame().setVisible(true);
+                    getFrame().setLocationRelativeTo(null);
+
+                    super.dispose();
+                }
+            };
+
+            CtrlRegistrarme cRegistrarme = new CtrlRegistrarme(fRegistrarme);
+            cRegistrarme.inicializar();
+
+            vista.dispose();
+        });
+
+        this.vista.lvlOlvideContraseña.addMouseListener(new MouseAdapter() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                FrmRegistrarme fRegistrarme = new FrmRegistrarme();
-                CtrlRegistrarme cRegistrarme = new CtrlRegistrarme(fRegistrarme);
-                cRegistrarme.inicializar();
+            public void mouseClicked(MouseEvent e) {
+                FrmRecuperarContraseña fRecuperarContraseña = new FrmRecuperarContraseña() {
+                    @Override
+                    public void dispose() {
+                        getFrame().setVisible(true);
+                        getFrame().setLocationRelativeTo(null);
 
-                vista.dispose();
-            }
-        });
-        
-        this.vista.lvlOlvideContraseña.addMouseListener(new MouseAdapter(){
-            public void mouseClicked(MouseEvent e){
-                FrmRecuperarContraseña fRecuperarContraseña = new FrmRecuperarContraseña();
-                CtrlRecuperarContraseña cRecuperarContraseña = new CtrlRecuperarContraseña(fRecuperarContraseña);                
+                        super.dispose();
+                    }
+                };
+
+                CtrlRecuperarContraseña cRecuperarContraseña = new CtrlRecuperarContraseña(fRecuperarContraseña);
                 cRecuperarContraseña.inicializar();
-                
+
                 vista.dispose();
             }
         });
+    }
 
+    private JFrame getFrame() {
+        return vista;
     }
 
     public void inicializar() {

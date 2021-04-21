@@ -1,9 +1,9 @@
 package Principal;
 
 import Conexion.Conexion;
+
 import Modelo.Colaborador;
 import Modelo.Cuenta;
-
 import Modelo.Producto;
 
 import java.sql.ResultSet;
@@ -11,11 +11,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+ * 
+ * @author Diego D.
+ * @version 1.1
+ * @since 2021
+ */
 public class AppEngine {
 
+    
     private static List<Producto> productos = new ArrayList<Producto>();
     private static List<Colaborador> colaboradores = new ArrayList<Colaborador>();
 
+    /***
+     * 
+     * @return {@code List<Producto>}
+     * @throws SQLException 
+     */
     public static List<Producto> getProductos() throws SQLException {
         productos.clear();
 
@@ -32,6 +44,11 @@ public class AppEngine {
         return productos;
     }
 
+    /***
+     * 
+     * @return {@code List<Colaborador>}
+     * @throws SQLException 
+     */
     public static List<Colaborador> getColaboradores() throws SQLException {
         colaboradores.clear();
 
@@ -60,8 +77,18 @@ public class AppEngine {
         return colaboradores;
     }
 
+    /***
+     * 
+     * @param ID
+     * @throws SQLException 
+     */
     public static void iniciarSesion(int ID) throws SQLException {
         String SQL = "UPDATE Cuenta SET CONECTADO = 1 WHERE Cuenta.ID = " + ID;
+        Conexion.SetStatement(SQL);
+    }
+    
+    public static void cerrarSesion(int ID) throws SQLException {
+        String SQL = "UPDATE Cuenta SET CONECTADO = 0 WHERE Cuenta.ID = " + ID;
         Conexion.SetStatement(SQL);
     }
 }

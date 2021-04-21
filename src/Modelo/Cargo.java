@@ -1,5 +1,11 @@
 package Modelo;
 
+/**
+ *
+ * @author Diego D.
+ * @version 1.1
+ * @since 2021
+ */
 public enum Cargo {
     GERENTE_GENERAL("Gerente general"),
     GERENTE_DEPARTAMENTO("Gerente de departamento"),
@@ -9,10 +15,18 @@ public enum Cargo {
 
     private final String descripcion;
 
+    /**
+     *
+     * @param descripcion
+     */
     private Cargo(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return descripcion;

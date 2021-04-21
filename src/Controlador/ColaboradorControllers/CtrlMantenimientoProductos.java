@@ -5,6 +5,7 @@ import Conexion.DBParametro;
 import Modelo.Colaborador;
 import Modelo.Producto;
 import Principal.AppEngine;
+import Utilitario.Cleaner;
 import Utilitario.ModeloJTable;
 
 import Vista.ColaboradorViews.FrmMantenimientoProductos;
@@ -169,8 +170,7 @@ public class CtrlMantenimientoProductos {
     
     private void limpiarDatos() {
         ID_PRODUCTO = 0;
-        vista.txtNombre.setText("");
-        vista.txtDetalle.setText("");
+        Cleaner.limpiarCampos(vista.panelDatos);
         vista.txtPrecio.setText("0.00");
         vista.btnEliminar.setEnabled(false);
         vista.btnGuardar.setEnabled(false);

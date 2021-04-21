@@ -64,10 +64,15 @@ public class CtrlRegistrarme {
                     Conexion.setSP("SETNuevoCliente(?,?,?,?,?,?,?)", parametros);
 
                     JOptionPane.showMessageDialog(vista, "Bienvenid@ LAGART@ " + nombre + " " + apellidoPaterno + " ¡Se ha registrado con éxito!");
-                    
-                    String mensaje = "";
+
+                    String mensaje = "<html><h1>&nbsp;Hola, <b>" + nombre + "</b>:</h1>"
+                            + "<p>&nbsp;¡De parte del equipo de Lagarto Store queremos darte "
+                            + "bienvenida a nuestra familia!<br>"
+                            + "<p>&nbsp;No olvides que en tu próxima compra obtendrás un descuento del 50% en el monto si introduces "
+                            + "el código: <b>LAGARTO</b><br>"
+                            + "&nbsp;JAAAAAAAAAAAA!</html>";
                     Mensajeria.EnviarCorreo(correo, "Bienvenid@ LAGART@", mensaje, vista);
-                    
+
                     FrmLogin fLogin = new FrmLogin();
                     CtrlLogin cLogin = new CtrlLogin(fLogin);
                     fLogin.txtCorreo.setText(correo);
@@ -97,9 +102,9 @@ public class CtrlRegistrarme {
             FrmLogin fLogin = new FrmLogin();
             CtrlLogin cLogin = new CtrlLogin(fLogin);
             fLogin.txtCorreo.requestFocus();
-            
+
             cLogin.inicializar();
-            
+
             vista.dispose();
         });
     }

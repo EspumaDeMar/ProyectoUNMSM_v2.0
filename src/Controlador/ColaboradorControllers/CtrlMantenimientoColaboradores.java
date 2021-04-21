@@ -5,11 +5,14 @@ import Conexion.DBParametro;
 
 import Modelo.Cargo;
 import Modelo.Colaborador;
+import Modelo.IControlador;
 import Modelo.Turno;
 
 import Utilitario.ModeloJTable;
 
 import Principal.AppEngine;
+import Utilitario.Cleaner;
+
 
 import Vista.ColaboradorViews.FrmMantenimientoColaboradores;
 
@@ -24,7 +27,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
-public class CtrlMantenimientoColaboradores {
+public class CtrlMantenimientoColaboradores implements IControlador{
 
     FrmMantenimientoColaboradores vista;
     Colaborador colaborador;
@@ -279,22 +282,15 @@ public class CtrlMantenimientoColaboradores {
 
     private void limpiarDatos() {
         ID = 0;
-        vista.txtDNI.setText("");
-        vista.txtNombre.setText("");
-        vista.txtApellidoPaterno.setText("");
-        vista.txtApellidoMaterno.setText("");
-        vista.txtCorreo.setText("");
-        vista.txtContraseña.setText("");
-        vista.txtRepetirContraseña.setText("");
-        vista.cboCargo.setSelectedIndex(-1);
-        vista.cboTurno.setSelectedIndex(-1);
         vista.btnEliminar.setEnabled(false);
         vista.btnGuardar.setEnabled(false);
         vista.btnGuardar.setBackground(new Color(204, 204, 204));
         vista.btnAgregar.setEnabled(true);
         vista.btnAgregar.setBackground(new Color(3, 137, 57));
+        Cleaner.limpiarCampos(vista.panelDatos);
     }
 
+    @Override
     public void inicializar() {
         vista.rdoGrupo.add(this.vista.rdoFemenino);
         vista.rdoGrupo.add(this.vista.rdoMasculino);

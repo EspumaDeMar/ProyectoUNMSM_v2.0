@@ -8,11 +8,18 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+/**
+ *
+ * @author Diego D.
+ * @version 1.1
+ * @since 2021
+ */
 public class Mensajeria {
 
     /**
      *
      * @param destinatario
+     * @param asunto
      * @param mensaje
      * @param componente
      * @throws java.lang.Exception
