@@ -68,21 +68,19 @@
                               <Component id="jLabel8" min="-2" pref="140" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtApellidoPaterno" min="-2" pref="210" max="-2" attributes="0"/>
-                              <Component id="txtNombre" min="-2" pref="210" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="rdoMasculino" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="rdoFemenino" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtApellidoMaterno" alignment="0" min="-2" pref="210" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtApellidoPaterno" pref="210" max="32767" attributes="0"/>
+                              <Component id="txtNombre" pref="210" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="rdoMasculino" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="rdoFemenino" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="txtCorreo" min="-2" pref="210" max="-2" attributes="0"/>
-                              <Component id="txtContraseña" min="-2" pref="210" max="-2" attributes="0"/>
-                              <Component id="txtRepetirContraseña" min="-2" pref="210" max="-2" attributes="0"/>
-                              <Component id="txtDNI" min="-2" pref="70" max="-2" attributes="0"/>
+                              <Component id="txtApellidoMaterno" alignment="0" pref="210" max="32767" attributes="0"/>
+                              <Component id="txtCorreo" pref="210" max="32767" attributes="0"/>
+                              <Component id="txtContraseña" pref="210" max="32767" attributes="0"/>
+                              <Component id="txtRepetirContraseña" pref="210" max="32767" attributes="0"/>
+                              <Component id="txtDNI" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -94,7 +92,7 @@
                           <Component id="btnCancelar" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="105" max="32767" attributes="0"/>
+                  <EmptySpace pref="100" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -146,7 +144,7 @@
                   <Component id="btnRegistrarme" min="-2" pref="45" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnCancelar" min="-2" pref="45" max="-2" attributes="0"/>
-                  <EmptySpace pref="23" max="32767" attributes="0"/>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -434,6 +432,11 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
             </Property>
           </Properties>
           <AuxValues>

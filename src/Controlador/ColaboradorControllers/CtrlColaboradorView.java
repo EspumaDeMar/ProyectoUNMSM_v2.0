@@ -6,7 +6,6 @@ import Modelo.Colaborador;
 
 import Vista.ColaboradorViews.FrmColaboradorView;
 import Vista.ColaboradorViews.FrmConsultarClientes;
-import Vista.ColaboradorViews.FrmConsultarProductos;
 import Vista.ColaboradorViews.FrmMantenimientoClientes;
 import Vista.ColaboradorViews.FrmMantenimientoColaboradores;
 import Vista.ColaboradorViews.FrmMantenimientoProductos;
@@ -37,17 +36,6 @@ public class CtrlColaboradorView {
                 cLogin.inicializar();
 
                 vista.dispose();
-            }
-        });
-
-        vista.itConsultaProductos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                FrmConsultarProductos fcProductos = new FrmConsultarProductos();
-                redimensionar(fcProductos);
-
-                CtrlConsultarProductos cProductos = new CtrlConsultarProductos(fcProductos, colaborador);
-                cProductos.inicializar();
             }
         });
 

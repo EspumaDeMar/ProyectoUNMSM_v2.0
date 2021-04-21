@@ -21,7 +21,6 @@ public class FrmClienteView extends javax.swing.JFrame {
         panelEscritorio = new javax.swing.JDesktopPane();
         menuPrincipal = new javax.swing.JMenuBar();
         menuConsultas = new javax.swing.JMenu();
-        itConsultaProductos = new javax.swing.JMenuItem();
         itConsultaHistorial = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
         itCerrarSesion = new javax.swing.JMenuItem();
@@ -72,21 +71,6 @@ public class FrmClienteView extends javax.swing.JFrame {
         menuConsultas.setText("Consultas");
         menuConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuConsultas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-
-        itConsultaProductos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        itConsultaProductos.setBackground(new java.awt.Color(204, 204, 204));
-        itConsultaProductos.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        itConsultaProductos.setForeground(new java.awt.Color(51, 51, 51));
-        itConsultaProductos.setText("Consultar productos");
-        itConsultaProductos.setBorder(null);
-        itConsultaProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        itConsultaProductos.setPreferredSize(new java.awt.Dimension(250, 25));
-        itConsultaProductos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itConsultaProductosActionPerformed(evt);
-            }
-        });
-        menuConsultas.add(itConsultaProductos);
 
         itConsultaHistorial.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         itConsultaHistorial.setBackground(new java.awt.Color(204, 204, 204));
@@ -146,10 +130,6 @@ public class FrmClienteView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void itConsultaProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itConsultaProductosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itConsultaProductosActionPerformed
-
     private void itConsultaHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itConsultaHistorialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itConsultaHistorialActionPerformed
@@ -197,7 +177,6 @@ public class FrmClienteView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem itCerrarSesion;
     public javax.swing.JMenuItem itConsultaHistorial;
-    public javax.swing.JMenuItem itConsultaProductos;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JMenu menuConsultas;
     public javax.swing.JMenuBar menuPrincipal;

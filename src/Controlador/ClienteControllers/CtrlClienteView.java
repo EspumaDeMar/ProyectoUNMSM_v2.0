@@ -4,7 +4,6 @@ import Controlador.CtrlLogin;
 import Modelo.Cliente;
 import Vista.ClienteViews.FrmClienteView;
 import Vista.ClienteViews.FrmConsultarCompras;
-import Vista.ClienteViews.FrmConsultarProductos;
 import Vista.FrmLogin;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -31,17 +30,6 @@ public class CtrlClienteView {
                 cLogin.inicializar();
 
                 vista.dispose();
-            }
-        });
-        
-        vista.itConsultaProductos.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                FrmConsultarProductos fcProductos = new FrmConsultarProductos();
-                redimensionar(fcProductos);
-
-                CtrlConsultarProductos cProductos = new CtrlConsultarProductos(fcProductos, cliente);
-                cProductos.inicializar();
             }
         });
         
