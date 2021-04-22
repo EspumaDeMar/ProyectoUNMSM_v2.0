@@ -3,10 +3,10 @@ package Controlador.ColaboradorControllers;
 import Conexion.Conexion;
 import Conexion.DBParametro;
 
-import Modelo.Cargo;
+import Modelo.Enum.Cargo;
 import Modelo.Colaborador;
-import Modelo.IControlador;
-import Modelo.Turno;
+import Modelo.Interface.IControlador;
+import Modelo.Enum.Turno;
 
 import Utilitario.ModeloJTable;
 

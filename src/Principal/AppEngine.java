@@ -87,6 +87,11 @@ public class AppEngine {
         Conexion.SetStatement(SQL);
     }
     
+    /***
+     * 
+     * @param ID
+     * @throws SQLException 
+     */
     public static void cerrarSesion(int ID) throws SQLException {
         String SQL = "UPDATE Cuenta SET CONECTADO = 0 WHERE Cuenta.ID = " + ID;
         Conexion.SetStatement(SQL);
