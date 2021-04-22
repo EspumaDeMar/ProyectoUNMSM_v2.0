@@ -13,7 +13,6 @@ import Utilitario.ModeloJTable;
 import Principal.AppEngine;
 import Utilitario.Cleaner;
 
-
 import Vista.ColaboradorViews.FrmMantenimientoColaboradores;
 
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 
-public class CtrlMantenimientoColaboradores implements IControlador{
+public class CtrlMantenimientoColaboradores implements IControlador {
 
     FrmMantenimientoColaboradores vista;
     Colaborador colaborador;
@@ -48,12 +47,6 @@ public class CtrlMantenimientoColaboradores implements IControlador{
     public CtrlMantenimientoColaboradores(FrmMantenimientoColaboradores vista, Colaborador colaborador) {
         this.vista = vista;
         this.colaborador = colaborador;
-
-        try {
-            obtenerColaboradores();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente error: " + ex.getMessage(), "SQL", 0);
-        }
 
         vista.btnLimpiar.addActionListener((ActionEvent e) -> {
             limpiarDatos();
@@ -292,14 +285,21 @@ public class CtrlMantenimientoColaboradores implements IControlador{
 
     @Override
     public void inicializar() {
-        vista.rdoGrupo.add(this.vista.rdoFemenino);
-        vista.rdoGrupo.add(this.vista.rdoMasculino);
-        vista.cboCargo.setModel(new DefaultComboBoxModel(Cargo.values()));
-        vista.cboCargo.setSelectedIndex(-1);
-        vista.cboTurno.setModel(new DefaultComboBoxModel(Turno.values()));
-        vista.cboTurno.setSelectedIndex(-1);
-        vista.btnEliminar.setEnabled(false);
-        vista.btnGuardar.setEnabled(false);
-        vista.show();
+        try {
+            vista.rdoGrupo.add(this.vista.rdoFemenino);
+            vista.rdoGrupo.add(this.vista.rdoMasculino);
+            vista.cboCargo.setModel(new DefaultComboBoxModel(Cargo.values()));
+            vista.cboCargo.setSelectedIndex(-1);
+            vista.cboTurno.setModel(new DefaultComboBoxModel(Turno.values()));
+            vista.cboTurno.setSelectedIndex(-1);
+            vista.btnEliminar.setEnabled(false);
+            vista.btnGuardar.setEnabled(false);
+            
+            obtenerColaboradores();
+
+            vista.show();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente error: " + ex.getMessage(), "SQL", 0);
+        }
     }
 }

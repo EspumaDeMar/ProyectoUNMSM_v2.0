@@ -22,8 +22,6 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         itMantenimientoColaboradores = new javax.swing.JMenuItem();
         itMantenimientoProductos = new javax.swing.JMenuItem();
         itMantenimientoClientes = new javax.swing.JMenuItem();
-        menuConsultas = new javax.swing.JMenu();
-        itConsultaClientes = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
         itCerrarSesion = new javax.swing.JMenuItem();
 
@@ -124,32 +122,6 @@ public class FrmColaboradorView extends javax.swing.JFrame {
 
         menuPrincipal.add(menuMantenimientos);
 
-        menuConsultas.setBackground(new java.awt.Color(3, 137, 57));
-        menuConsultas.setBorder(null);
-        menuConsultas.setForeground(new java.awt.Color(51, 51, 51));
-        menuConsultas.setText("Consultas");
-        menuConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        menuConsultas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        menuConsultas.setMinimumSize(new java.awt.Dimension(71, 25));
-        menuConsultas.setPreferredSize(new java.awt.Dimension(71, 25));
-
-        itConsultaClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        itConsultaClientes.setBackground(new java.awt.Color(204, 204, 204));
-        itConsultaClientes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        itConsultaClientes.setForeground(new java.awt.Color(51, 51, 51));
-        itConsultaClientes.setText("Consultar clientes");
-        itConsultaClientes.setBorder(null);
-        itConsultaClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        itConsultaClientes.setPreferredSize(new java.awt.Dimension(193, 25));
-        itConsultaClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itConsultaClientesActionPerformed(evt);
-            }
-        });
-        menuConsultas.add(itConsultaClientes);
-
-        menuPrincipal.add(menuConsultas);
-
         menuSalir.setBackground(new java.awt.Color(3, 137, 57));
         menuSalir.setBorder(null);
         menuSalir.setForeground(new java.awt.Color(51, 51, 51));
@@ -195,10 +167,6 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void itConsultaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itConsultaClientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itConsultaClientesActionPerformed
 
     private void itMantenimientoProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMantenimientoProductosActionPerformed
         // TODO add your handling code here:
@@ -253,12 +221,10 @@ public class FrmColaboradorView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem itCerrarSesion;
-    public javax.swing.JMenuItem itConsultaClientes;
     public javax.swing.JMenuItem itMantenimientoClientes;
     public javax.swing.JMenuItem itMantenimientoColaboradores;
     public javax.swing.JMenuItem itMantenimientoProductos;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JMenu menuConsultas;
     public javax.swing.JMenu menuMantenimientos;
     public javax.swing.JMenuBar menuPrincipal;
     public javax.swing.JMenu menuSalir;

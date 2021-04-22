@@ -11,22 +11,24 @@ import java.util.List;
  */
 public class Compra {
     
-    private final int ID;
+    private int ID;
     private double Monto;
     private List<Producto> Productos;
     private Cliente Cliente;
 
     /***
      * 
-     * @param ID
-     * @param monto
      * @param cliente 
      */
-    public Compra(int ID, double monto, Cliente cliente) {
-        this.ID = ID;
-        this.Monto = monto;
-        this.Productos = new ArrayList<Producto>();
+    public Compra(Cliente cliente) {
         this.Cliente = cliente;
+        this.Productos = new ArrayList<Producto>();
+        this.Monto = 0;
+    }
+    
+    public void agregarProductos(Producto producto){
+        Productos.add(producto);
+        Monto = Monto + producto.getPrecio();
     }
 
     /***
@@ -37,20 +39,16 @@ public class Compra {
         return ID;
     }
 
+    public void setID(int ID) {
+        this.ID = ID;
+    }    
+
     /***
      * 
      * @return 
      */
     public double getMonto() {
         return Monto;
-    }
-
-    /***
-     * 
-     * @param monto 
-     */
-    public void setMonto(double monto) {
-        Monto = monto;
     }
 
     /***
@@ -63,25 +61,9 @@ public class Compra {
 
     /***
      * 
-     * @param productos 
-     */
-    public void setProductos(List<Producto> productos) {
-        Productos = productos;
-    }
-
-    /***
-     * 
      * @return 
      */
     public Modelo.Cliente getCliente() {
         return Cliente;
-    }
-
-    /***
-     * 
-     * @param cliente 
-     */
-    public void setCliente(Modelo.Cliente cliente) {
-        Cliente = cliente;
     }
 }

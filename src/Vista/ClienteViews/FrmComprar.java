@@ -29,24 +29,26 @@ public class FrmComprar extends javax.swing.JInternalFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblConsulta = new javax.swing.JTable();
+        tblCompras = new javax.swing.JTable();
         btnAgregar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnAplicar = new javax.swing.JButton();
         txtCodigoPromocional = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        lblMonto = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnComprar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        tblConsulta1 = new javax.swing.JTable();
+        tblConsulta = new javax.swing.JTable();
+
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tu carrito de compras", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(102, 102, 102))); // NOI18N
 
-        tblConsulta.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        tblConsulta.setModel(new javax.swing.table.DefaultTableModel(
+        tblCompras.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        tblCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -62,8 +64,8 @@ public class FrmComprar extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblConsulta.setShowGrid(true);
-        jScrollPane1.setViewportView(tblConsulta);
+        tblCompras.setShowGrid(true);
+        jScrollPane1.setViewportView(tblCompras);
 
         btnAgregar.setBackground(new java.awt.Color(3, 137, 57));
         btnAgregar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -86,16 +88,18 @@ public class FrmComprar extends javax.swing.JInternalFrame {
         btnAplicar.setBorder(null);
         btnAplicar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        txtCodigoPromocional.setBackground(new java.awt.Color(255, 255, 255));
         txtCodigoPromocional.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtCodigoPromocional.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCodigoPromocional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("0.00");
-        jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblMonto.setBackground(new java.awt.Color(255, 255, 255));
+        lblMonto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblMonto.setForeground(new java.awt.Color(0, 0, 0));
+        lblMonto.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblMonto.setText("0.00");
+        lblMonto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lblMonto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -121,13 +125,13 @@ public class FrmComprar extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(65, 65, 65)
                         .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 66, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -135,7 +139,7 @@ public class FrmComprar extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtCodigoPromocional)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
+                            .addComponent(lblMonto, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE))
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAplicar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -157,7 +161,7 @@ public class FrmComprar extends javax.swing.JInternalFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnComprar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42))
@@ -166,8 +170,8 @@ public class FrmComprar extends javax.swing.JInternalFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nuestros productos", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(102, 102, 102))); // NOI18N
 
-        tblConsulta1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        tblConsulta1.setModel(new javax.swing.table.DefaultTableModel(
+        tblConsulta.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        tblConsulta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -183,8 +187,8 @@ public class FrmComprar extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        tblConsulta1.setShowGrid(true);
-        jScrollPane2.setViewportView(tblConsulta1);
+        tblConsulta.setShowGrid(true);
+        jScrollPane2.setViewportView(tblConsulta);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -192,7 +196,7 @@ public class FrmComprar extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -208,9 +212,9 @@ public class FrmComprar extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -232,15 +236,15 @@ public class FrmComprar extends javax.swing.JInternalFrame {
     public javax.swing.JButton btnAplicar;
     public javax.swing.JButton btnComprar;
     public javax.swing.JButton btnEliminar;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JLabel lblMonto;
+    public javax.swing.JTable tblCompras;
     public javax.swing.JTable tblConsulta;
-    public javax.swing.JTable tblConsulta1;
     public javax.swing.JTextField txtCodigoPromocional;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,7 +14,7 @@ public class FrmLogin extends javax.swing.JFrame {
 
     @Override
     public Image getIconImage() {
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Recursos/Imagenes/LagartoLOGO.jpg"));
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Recursos/Imagenes/wadafa.jpg"));
 
         return retValue;
     }

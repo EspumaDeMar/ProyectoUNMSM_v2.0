@@ -1,13 +1,14 @@
 package Modelo;
 
-/***
- * 
+/**
+ * *
+ *
  * @author Diego D.
  * @version 1.1
  * @since 2021
  */
 public abstract class EntidadBase {
-    
+
     private final int ID;
     private int DNI;
     private String Nombre;
@@ -16,14 +17,15 @@ public abstract class EntidadBase {
     private Cuenta Cuenta;
     private String Sexo;
 
-    /***
-     * 
+    /**
+     * *
+     *
      * @param ID
      * @param DNI
      * @param nombre
      * @param apellidoPaterno
      * @param apellidoMaterno
-     * @param sexo 
+     * @param sexo
      */
     public EntidadBase(int ID, int DNI, String nombre, String apellidoPaterno, String apellidoMaterno, String sexo) {
         this.ID = ID;
@@ -34,105 +36,118 @@ public abstract class EntidadBase {
         this.Sexo = sexo;
     }
 
-    /***
-     * 
-     * @return 
+    /**
+     * *
+     *
+     * @return
      */
     public int getID() {
         return ID;
-    }    
+    }
 
-    /***
-     * 
-     * @return 
+    /**
+     * *
+     *
+     * @return
      */
     public int getDNI() {
         return DNI;
     }
 
-    /***
-     * 
-     * @param DNI 
+    /**
+     * *
+     *
+     * @param DNI
      */
     public void setDNI(int DNI) {
         this.DNI = DNI;
     }
 
-    /***
-     * 
-     * @return 
+    /**
+     * *
+     *
+     * @return
      */
     public String getNombre() {
         return Nombre;
     }
-    
-    /***
-     * 
-     * @param nombre 
+
+    /**
+     * *
+     *
+     * @param nombre
      */
     public void setNombre(String nombre) {
         Nombre = nombre;
     }
 
-    /***
-     * 
-     * @return 
+    /**
+     * *
+     *
+     * @return
      */
     public String getApellidoPaterno() {
         return ApellidoPaterno;
     }
 
-    /***
-     * 
-     * @param apellidoPaterno 
+    /**
+     * *
+     *
+     * @param apellidoPaterno
      */
     public void setApellidoPaterno(String apellidoPaterno) {
         ApellidoPaterno = apellidoPaterno;
     }
 
-    /***
-     * 
-     * @return 
+    /**
+     * *
+     *
+     * @return
      */
     public String getApellidoMaterno() {
         return ApellidoMaterno;
     }
 
-    /***
-     * 
-     * @param apellidoMaterno 
+    /**
+     * *
+     *
+     * @param apellidoMaterno
      */
     public void setApellidoMaterno(String apellidoMaterno) {
         ApellidoMaterno = apellidoMaterno;
     }
 
-    /***
-     * 
-     * @return 
+    /**
+     * *
+     *
+     * @return
      */
     public Modelo.Cuenta getCuenta() {
         return Cuenta;
     }
 
-    /***
-     * 
-     * @param cuenta 
+    /**
+     * *
+     *
+     * @param cuenta
      */
     public void setCuenta(Modelo.Cuenta cuenta) {
         Cuenta = cuenta;
     }
 
-    /***
-     * 
-     * @return 
+    /**
+     * *
+     *
+     * @return
      */
     public String getSexo() {
         return Sexo;
     }
 
-    /***
-     * 
-     * @param sexo 
+    /**
+     * *
+     *
+     * @param sexo
      */
     public void setSexo(String sexo) {
         Sexo = sexo;

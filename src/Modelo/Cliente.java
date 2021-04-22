@@ -26,6 +26,10 @@ public class Cliente extends EntidadBase{
         super(ID, DNI, nombre, apellidoPaterno, apellidoMaterno, sexo);
         Compras = new ArrayList<Compra>();
     }
+    
+    public void agregarCompras(Compra compra){
+        Compras.add(compra);
+    }
 
     /***
      * 

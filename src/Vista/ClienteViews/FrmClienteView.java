@@ -22,6 +22,7 @@ public class FrmClienteView extends javax.swing.JFrame {
         menuPrincipal = new javax.swing.JMenuBar();
         menuConsultas = new javax.swing.JMenu();
         itConsultaHistorial = new javax.swing.JMenuItem();
+        itComprar = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
         itCerrarSesion = new javax.swing.JMenuItem();
 
@@ -87,6 +88,21 @@ public class FrmClienteView extends javax.swing.JFrame {
         });
         menuConsultas.add(itConsultaHistorial);
 
+        itComprar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        itComprar.setBackground(new java.awt.Color(204, 204, 204));
+        itComprar.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        itComprar.setForeground(new java.awt.Color(51, 51, 51));
+        itComprar.setText("Comprar");
+        itComprar.setBorder(null);
+        itComprar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        itComprar.setPreferredSize(new java.awt.Dimension(250, 25));
+        itComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itComprarActionPerformed(evt);
+            }
+        });
+        menuConsultas.add(itComprar);
+
         menuPrincipal.add(menuConsultas);
 
         menuSalir.setBackground(new java.awt.Color(3, 137, 57));
@@ -138,6 +154,10 @@ public class FrmClienteView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itCerrarSesionActionPerformed
 
+    private void itComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itComprarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itComprarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -176,6 +196,7 @@ public class FrmClienteView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem itCerrarSesion;
+    public javax.swing.JMenuItem itComprar;
     public javax.swing.JMenuItem itConsultaHistorial;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JMenu menuConsultas;

@@ -26,8 +26,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JFrame;
@@ -80,7 +78,6 @@ public class CtrlLogin {
                                 }
 
                                 AppEngine.iniciarSesion(colaborador.getID());
-                                colaborador.getCuenta().setConectado(true);
 
                                 FrmColaboradorView fColaboradorV = new FrmColaboradorView() {
                                     @Override
@@ -91,6 +88,7 @@ public class CtrlLogin {
 
                                             AppEngine.cerrarSesion(colaborador.getID());
 
+                                            vista.txtContraseña.setText("");
                                             super.dispose();
                                         } catch (SQLException ex) {
                                             JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.getMessage(), "SQL", 0);
@@ -114,34 +112,26 @@ public class CtrlLogin {
                                 rs = Conexion.getSP("GETComprasDeCliente(?)", parametros);
 
                                 parametros.clear();
-                                List<Compra> compras = new ArrayList<Compra>();
                                 while (rs.next()) {
-                                    Compra compra = new Compra(
-                                            rs.getInt("ID_COMPRA"),
-                                            rs.getDouble("MONTO"),
-                                            cliente);
+                                    Compra compra = new Compra(cliente);
+                                    compra.setID(rs.getInt("ID_COMPRA"));
 
                                     parametros.add(new DBParametro("ID_COMPRA", compra.getID()));
                                     ResultSet rsTemp = Conexion.getSP("GETProductosDeCompra(?)", parametros);
 
-                                    List<Producto> productos = new ArrayList<Producto>();
                                     while (rsTemp.next()) {
                                         Producto producto = new Producto(
                                                 rsTemp.getInt("ID_PRODUCTO"),
                                                 rsTemp.getDouble("PRECIO"),
                                                 rsTemp.getString("NOMBRE"),
                                                 rsTemp.getString("DETALLE"));
-                                        productos.add(producto);
+                                        compra.agregarProductos(producto);
                                     }
-
-                                    compra.setProductos(productos);
-                                    compras.add(compra);
+                                    
+                                    cliente.agregarCompras(compra);
                                 }
 
-                                cliente.setCompras(compras);
-
                                 AppEngine.iniciarSesion(cliente.getID());
-                                cliente.getCuenta().setConectado(true);
 
                                 FrmClienteView fClienteView = new FrmClienteView() {
                                     @Override
@@ -152,6 +142,7 @@ public class CtrlLogin {
 
                                             AppEngine.cerrarSesion(cliente.getID());
 
+                                            vista.txtContraseña.setText("");                                            
                                             super.dispose();
                                         } catch (SQLException ex) {
                                             JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.getMessage(), "SQL", 0);
@@ -189,6 +180,7 @@ public class CtrlLogin {
                     getFrame().setVisible(true);
                     getFrame().setLocationRelativeTo(null);
 
+                    vista.txtContraseña.setText("");
                     super.dispose();
                 }
             };
@@ -208,6 +200,7 @@ public class CtrlLogin {
                         getFrame().setVisible(true);
                         getFrame().setLocationRelativeTo(null);
 
+                        vista.txtContraseña.setText("");
                         super.dispose();
                     }
                 };
