@@ -8,6 +8,6 @@ package Modelo.Interface;
  */
 public interface IControlador {
     
-    public void inicializar();        
+    public void inicializar() throws Exception;        
     
 }

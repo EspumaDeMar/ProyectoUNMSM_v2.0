@@ -26,9 +26,14 @@ public class Compra {
         this.Monto = 0;
     }
     
-    public void agregarProductos(Producto producto){
+    public void agregarProducto(Producto producto){
         Productos.add(producto);
         Monto = Monto + producto.getPrecio();
+    }
+    
+    public void eliminarProducto(Producto producto){
+        Productos.remove(producto);
+        Monto = Monto - producto.getPrecio();
     }
 
     /***
@@ -50,6 +55,14 @@ public class Compra {
     public double getMonto() {
         return Monto;
     }
+
+    /***
+     * 
+     * @param Monto 
+     */
+    public void setMonto(double Monto) {
+        this.Monto = Monto;
+    }    
 
     /***
      * 

@@ -44,6 +44,9 @@ public class FrmMantenimientoProductos extends javax.swing.JInternalFrame {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(null);
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
         setTitle("Mantenimiento de productos");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

@@ -1,12 +1,21 @@
 package Vista.ClienteViews;
 
 import Vista.ColaboradorViews.*;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 public class FrmClienteView extends javax.swing.JFrame {
 
     public FrmClienteView() {
         initComponents();
     }
+    
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Recursos/Imagenes/lagartoEmoji.png"));
+
+        return retValue;
+    }        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -21,13 +30,13 @@ public class FrmClienteView extends javax.swing.JFrame {
         panelEscritorio = new javax.swing.JDesktopPane();
         menuPrincipal = new javax.swing.JMenuBar();
         menuConsultas = new javax.swing.JMenu();
-        itConsultaHistorial = new javax.swing.JMenuItem();
         itComprar = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
         itCerrarSesion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Lagarto Store - Colaboradores");
+        setIconImage(getIconImage());
         setSize(new java.awt.Dimension(700, 575));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -72,21 +81,6 @@ public class FrmClienteView extends javax.swing.JFrame {
         menuConsultas.setText("Consultas");
         menuConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menuConsultas.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-
-        itConsultaHistorial.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
-        itConsultaHistorial.setBackground(new java.awt.Color(204, 204, 204));
-        itConsultaHistorial.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        itConsultaHistorial.setForeground(new java.awt.Color(51, 51, 51));
-        itConsultaHistorial.setText("Consultar historial de compras");
-        itConsultaHistorial.setBorder(null);
-        itConsultaHistorial.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        itConsultaHistorial.setPreferredSize(new java.awt.Dimension(193, 25));
-        itConsultaHistorial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itConsultaHistorialActionPerformed(evt);
-            }
-        });
-        menuConsultas.add(itConsultaHistorial);
 
         itComprar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         itComprar.setBackground(new java.awt.Color(204, 204, 204));
@@ -146,10 +140,6 @@ public class FrmClienteView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void itConsultaHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itConsultaHistorialActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itConsultaHistorialActionPerformed
-
     private void itCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itCerrarSesionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itCerrarSesionActionPerformed
@@ -197,7 +187,6 @@ public class FrmClienteView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem itCerrarSesion;
     public javax.swing.JMenuItem itComprar;
-    public javax.swing.JMenuItem itConsultaHistorial;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JMenu menuConsultas;
     public javax.swing.JMenuBar menuPrincipal;

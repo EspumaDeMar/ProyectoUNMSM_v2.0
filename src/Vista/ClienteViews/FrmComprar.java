@@ -30,8 +30,6 @@ public class FrmComprar extends javax.swing.JInternalFrame {
         panelCarritoCompras = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCompras = new javax.swing.JTable();
-        btnAgregar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
         btnAplicar = new javax.swing.JButton();
         txtCodigoPromocional = new javax.swing.JTextField();
         lblMonto = new javax.swing.JLabel();
@@ -43,6 +41,9 @@ public class FrmComprar extends javax.swing.JInternalFrame {
         tblConsulta = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
 
         panelCarritoCompras.setBackground(new java.awt.Color(255, 255, 255));
         panelCarritoCompras.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tu carrito de compras", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 18), new java.awt.Color(102, 102, 102))); // NOI18N
@@ -67,27 +68,15 @@ public class FrmComprar extends javax.swing.JInternalFrame {
         tblCompras.setShowGrid(true);
         jScrollPane1.setViewportView(tblCompras);
 
-        btnAgregar.setBackground(new java.awt.Color(3, 137, 57));
-        btnAgregar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnAgregar.setForeground(new java.awt.Color(51, 51, 51));
-        btnAgregar.setText("Agregar");
-        btnAgregar.setBorder(null);
-        btnAgregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        btnEliminar.setBackground(new java.awt.Color(255, 0, 51));
-        btnEliminar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnEliminar.setForeground(new java.awt.Color(51, 51, 51));
-        btnEliminar.setText("Eliminar");
-        btnEliminar.setBorder(null);
-        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
         btnAplicar.setBackground(new java.awt.Color(204, 204, 204));
         btnAplicar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnAplicar.setForeground(new java.awt.Color(51, 51, 51));
         btnAplicar.setText("Aplicar");
         btnAplicar.setBorder(null);
         btnAplicar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAplicar.setEnabled(false);
 
+        txtCodigoPromocional.setBackground(new java.awt.Color(255, 255, 255));
         txtCodigoPromocional.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         txtCodigoPromocional.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtCodigoPromocional.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -115,6 +104,7 @@ public class FrmComprar extends javax.swing.JInternalFrame {
         btnComprar.setText("Comprar");
         btnComprar.setBorder(null);
         btnComprar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnComprar.setEnabled(false);
 
         javax.swing.GroupLayout panelCarritoComprasLayout = new javax.swing.GroupLayout(panelCarritoCompras);
         panelCarritoCompras.setLayout(panelCarritoComprasLayout);
@@ -124,12 +114,6 @@ public class FrmComprar extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(panelCarritoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
-                    .addGroup(panelCarritoComprasLayout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelCarritoComprasLayout.createSequentialGroup()
                         .addGroup(panelCarritoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,10 +132,6 @@ public class FrmComprar extends javax.swing.JInternalFrame {
             panelCarritoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelCarritoComprasLayout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelCarritoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(panelCarritoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCodigoPromocional, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,10 +210,8 @@ public class FrmComprar extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnAplicar;
     public javax.swing.JButton btnComprar;
-    public javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel3;

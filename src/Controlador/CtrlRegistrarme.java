@@ -2,8 +2,8 @@ package Controlador;
 
 import Conexion.Conexion;
 import Conexion.DBParametro;
+import Modelo.Interface.IControlador;
 import Utilitario.Mensajeria;
-import Vista.FrmLogin;
 import Vista.FrmRegistrarme;
 import java.awt.event.ActionEvent;
 import java.sql.SQLException;
@@ -13,7 +13,7 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JOptionPane;
 
-public class CtrlRegistrarme {
+public class CtrlRegistrarme implements IControlador {
 
     FrmRegistrarme vista;
 
@@ -119,6 +119,7 @@ public class CtrlRegistrarme {
     public void inicializar() {
         this.vista.rdoGrupoSexo.add(this.vista.rdoMasculino);
         this.vista.rdoGrupoSexo.add(this.vista.rdoFemenino);
+        this.vista.setResizable(false);
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
     }

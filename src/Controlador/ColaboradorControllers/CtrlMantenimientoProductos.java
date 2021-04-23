@@ -3,6 +3,7 @@ package Controlador.ColaboradorControllers;
 import Conexion.Conexion;
 import Conexion.DBParametro;
 import Modelo.Colaborador;
+import Modelo.Interface.IControlador;
 import Modelo.Producto;
 import Principal.AppEngine;
 import Utilitario.Cleaner;
@@ -20,7 +21,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
-public class CtrlMantenimientoProductos {
+public class CtrlMantenimientoProductos implements IControlador {
 
     FrmMantenimientoProductos vista;
     Colaborador colaborador;
@@ -127,7 +128,7 @@ public class CtrlMantenimientoProductos {
                 }
             }
         });
-        
+
         vista.btnLimpiar.addActionListener((ActionEvent e) -> {
             limpiarDatos();
         });
@@ -138,7 +139,7 @@ public class CtrlMantenimientoProductos {
         for (int i = 0; i < 4; i++) {
             columnas[i] = vista.tblConsulta.getColumnName(i);
         }
-        
+
         ModeloJTable modelo = new ModeloJTable(null, columnas);
         productos = AppEngine.getProductos();
         Object[] registro = new Object[4];
@@ -174,14 +175,11 @@ public class CtrlMantenimientoProductos {
         vista.btnAgregar.setBackground(new Color(3, 137, 57));
     }
 
-    public void inicializar() {
-        try {
-            obtenerProductos();
-            vista.btnEliminar.setEnabled(false);
-            vista.btnGuardar.setEnabled(false);
-            vista.show();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente error: " + ex.getMessage(), "SQL", 0);
-        }
+    public void inicializar() throws Exception {
+        obtenerProductos();
+        vista.btnEliminar.setEnabled(false);
+        vista.btnGuardar.setEnabled(false);
+        vista.show();
+
     }
 }

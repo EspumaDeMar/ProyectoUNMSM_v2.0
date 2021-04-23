@@ -284,22 +284,19 @@ public class CtrlMantenimientoColaboradores implements IControlador {
     }
 
     @Override
-    public void inicializar() {
-        try {
-            vista.rdoGrupo.add(this.vista.rdoFemenino);
-            vista.rdoGrupo.add(this.vista.rdoMasculino);
-            vista.cboCargo.setModel(new DefaultComboBoxModel(Cargo.values()));
-            vista.cboCargo.setSelectedIndex(-1);
-            vista.cboTurno.setModel(new DefaultComboBoxModel(Turno.values()));
-            vista.cboTurno.setSelectedIndex(-1);
-            vista.btnEliminar.setEnabled(false);
-            vista.btnGuardar.setEnabled(false);
-            
-            obtenerColaboradores();
+    public void inicializar() throws Exception {
+        vista.rdoGrupo.add(this.vista.rdoFemenino);
+        vista.rdoGrupo.add(this.vista.rdoMasculino);
+        vista.cboCargo.setModel(new DefaultComboBoxModel(Cargo.values()));
+        vista.cboCargo.setSelectedIndex(-1);
+        vista.cboTurno.setModel(new DefaultComboBoxModel(Turno.values()));
+        vista.cboTurno.setSelectedIndex(-1);
+        vista.btnEliminar.setEnabled(false);
+        vista.btnGuardar.setEnabled(false);
 
-            vista.show();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente error: " + ex.getMessage(), "SQL", 0);
-        }
+        obtenerColaboradores();
+
+        vista.show();
+
     }
 }

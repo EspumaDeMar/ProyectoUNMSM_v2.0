@@ -1,6 +1,7 @@
 package Controlador;
 
 import Conexion.DBParametro;
+import Modelo.Interface.IControlador;
 import static Utilitario.Mensajeria.EnviarCorreo;
 import Vista.FrmRecuperarContraseña;
 
@@ -13,7 +14,7 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.JOptionPane;
 
-public class CtrlRecuperarContraseña {
+public class CtrlRecuperarContraseña implements IControlador {
 
     FrmRecuperarContraseña vista;
 
@@ -97,6 +98,7 @@ public class CtrlRecuperarContraseña {
     }
 
     public void inicializar() {
+        this.vista.setResizable(false);
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
     }

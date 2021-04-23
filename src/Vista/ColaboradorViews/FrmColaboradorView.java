@@ -1,9 +1,19 @@
 package Vista.ColaboradorViews;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 public class FrmColaboradorView extends javax.swing.JFrame {
 
     public FrmColaboradorView() {
         initComponents();
+    }
+
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Recursos/Imagenes/lagartoEmoji.png"));
+
+        return retValue;
     }
 
     /**
@@ -26,6 +36,7 @@ public class FrmColaboradorView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Lagarto Store - Colaboradores");
+        setIconImage(getIconImage());
         setSize(new java.awt.Dimension(700, 575));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));

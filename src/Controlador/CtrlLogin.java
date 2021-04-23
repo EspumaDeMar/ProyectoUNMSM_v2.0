@@ -11,6 +11,8 @@ import Modelo.Cliente;
 import Modelo.Colaborador;
 import Modelo.Compra;
 import Modelo.Cuenta;
+import Modelo.Enum.Turno;
+import Modelo.Interface.IControlador;
 import Modelo.Producto;
 
 import Vista.ClienteViews.FrmClienteView;
@@ -31,7 +33,7 @@ import javax.swing.Action;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class CtrlLogin {
+public class CtrlLogin implements IControlador {
 
     FrmLogin vista;
 
@@ -71,10 +73,11 @@ public class CtrlLogin {
                                         rs.getString("SEXO"));
                                 colaborador.setCuenta(new Cuenta(correo, contraseña));
                                 colaborador.setCargo(rs.getString("CARGO"));
-                                if (rs.getInt("TURNO") == 1) {
-                                    colaborador.setTurno("MAÑANA");
-                                } else {
-                                    colaborador.setTurno(("NOCHE"));
+                                for (Turno turno : Turno.values()) {
+                                    if (turno.getTurno() == rs.getInt("TURNO")) {
+                                        colaborador.setTurno(turno.toString());
+                                        break;
+                                    }
                                 }
 
                                 AppEngine.iniciarSesion(colaborador.getID());
@@ -124,9 +127,9 @@ public class CtrlLogin {
                                                 rsTemp.getDouble("PRECIO"),
                                                 rsTemp.getString("NOMBRE"),
                                                 rsTemp.getString("DETALLE"));
-                                        compra.agregarProductos(producto);
+                                        compra.agregarProducto(producto);
                                     }
-                                    
+
                                     cliente.agregarCompras(compra);
                                 }
 
@@ -214,6 +217,7 @@ public class CtrlLogin {
     }
 
     public void inicializar() {
+        this.vista.setResizable(false);
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);
     }
