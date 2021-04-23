@@ -73,11 +73,6 @@ public class CtrlRegistrarme {
                             + "&nbsp;JAAAAAAAAAAAA!</html>";
                     Mensajeria.EnviarCorreo(correo, "Bienvenid@ LAGART@", mensaje, vista);
 
-                    FrmLogin fLogin = new FrmLogin();
-                    CtrlLogin cLogin = new CtrlLogin(fLogin);
-                    fLogin.txtCorreo.setText(correo);
-                    cLogin.inicializar();
-
                     vista.dispose();
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(vista, "!Ingrese un número de DNI válido!", "Registro", 0);
@@ -99,12 +94,6 @@ public class CtrlRegistrarme {
         vista.txtCorreo.addActionListener(accion);
 
         vista.btnCancelar.addActionListener((ActionEvent e) -> {
-            FrmLogin fLogin = new FrmLogin();
-            CtrlLogin cLogin = new CtrlLogin(fLogin);
-            fLogin.txtCorreo.requestFocus();
-
-            cLogin.inicializar();
-
             vista.dispose();
         });
     }

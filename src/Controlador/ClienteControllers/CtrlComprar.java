@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import javax.swing.JTable;
 import java.util.List;
+import javax.swing.JButton;
 
 public class CtrlComprar implements IControlador {
 
@@ -87,10 +88,22 @@ public class CtrlComprar implements IControlador {
         }
         vista.tblConsulta.setModel(modelo);
     }
+    
+    public void habilitarBotones(){
+        for (int i = 0; i < vista.panelCarritoCompras.getComponentCount(); i++) {
+            if (vista.panelCarritoCompras.getComponent(i) instanceof JButton) {
+                boolean isEnabled = ((JButton) vista.panelCarritoCompras.getComponent(i)).isEnabled();
+                ((JButton) vista.panelCarritoCompras.getComponent(i)).setEnabled(!isEnabled);
+            } 
+        }
+    }
 
     public void inicializar() {
         try {
             obtenerProductos();
+            vista.btnAplicar.setEnabled(false);
+            vista.btnComprar.setEnabled(false);
+            vista.btnAgregar.setEnabled(false);
             vista.show();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido el siguiente error: " + ex.getMessage(), "SQL", 0);

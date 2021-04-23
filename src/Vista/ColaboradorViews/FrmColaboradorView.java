@@ -21,7 +21,6 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         menuMantenimientos = new javax.swing.JMenu();
         itMantenimientoColaboradores = new javax.swing.JMenuItem();
         itMantenimientoProductos = new javax.swing.JMenuItem();
-        itMantenimientoClientes = new javax.swing.JMenuItem();
         menuSalir = new javax.swing.JMenu();
         itCerrarSesion = new javax.swing.JMenuItem();
 
@@ -105,21 +104,6 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         });
         menuMantenimientos.add(itMantenimientoProductos);
 
-        itMantenimientoClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        itMantenimientoClientes.setBackground(new java.awt.Color(204, 204, 204));
-        itMantenimientoClientes.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        itMantenimientoClientes.setForeground(new java.awt.Color(51, 51, 51));
-        itMantenimientoClientes.setText("Mantenimiento de clientes");
-        itMantenimientoClientes.setBorder(null);
-        itMantenimientoClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        itMantenimientoClientes.setPreferredSize(new java.awt.Dimension(250, 25));
-        itMantenimientoClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itMantenimientoClientesActionPerformed(evt);
-            }
-        });
-        menuMantenimientos.add(itMantenimientoClientes);
-
         menuPrincipal.add(menuMantenimientos);
 
         menuSalir.setBackground(new java.awt.Color(3, 137, 57));
@@ -172,10 +156,6 @@ public class FrmColaboradorView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_itMantenimientoProductosActionPerformed
 
-    private void itMantenimientoClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itMantenimientoClientesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itMantenimientoClientesActionPerformed
-
     private void itCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itCerrarSesionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itCerrarSesionActionPerformed
@@ -221,7 +201,6 @@ public class FrmColaboradorView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JMenuItem itCerrarSesion;
-    public javax.swing.JMenuItem itMantenimientoClientes;
     public javax.swing.JMenuItem itMantenimientoColaboradores;
     public javax.swing.JMenuItem itMantenimientoProductos;
     private javax.swing.JPanel jPanel1;

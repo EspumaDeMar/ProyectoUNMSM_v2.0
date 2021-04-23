@@ -2,7 +2,6 @@ package Controlador;
 
 import Conexion.DBParametro;
 import static Utilitario.Mensajeria.EnviarCorreo;
-import Vista.FrmLogin;
 import Vista.FrmRecuperarContraseña;
 
 import java.awt.event.ActionEvent;
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class CtrlRecuperarContraseña {
@@ -49,25 +47,18 @@ public class CtrlRecuperarContraseña {
                     ResultSet rs = Conexion.Conexion.getSP("GETRecuperarContraseña(?,?,?)", parametros);
                     while (rs.next()) {
                         if (rs.getInt("RESULT") == 1) {
-                            
-                            String contraseña = rs.getString("CONTRASEÑA");                            
-                            String asunto = "Recuperación de contraseña";                            
+
+                            String contraseña = rs.getString("CONTRASEÑA");
+                            String asunto = "Recuperación de contraseña";
                             String mensaje = "<html><h1>&nbsp;¡Hola <b>" + nombre + "</b>!</h1>"
-                                           + "<p>&nbsp;Al parecer olvidaste que eras un lagart@, JAAAAA!<br>"
-                                           + "&nbsp;y también tu contraseña...<br>"
-                                           + "&nbsp;Aquí te la recuerdo mi king:</p>"
-                                           + "<p align=\"center\"><h2>" + contraseña + "</h2></p>"
-                                           + "&nbsp;No te olvides, CÓDIGO: <b>LAGARTO</b><br>"
-                                           + "&nbsp;Saludos mi rey!</html>";
+                                    + "<p>&nbsp;Al parecer olvidaste que eras un lagart@, JAAAAA!<br>"
+                                    + "&nbsp;y también tu contraseña...<br>"
+                                    + "&nbsp;Aquí te la recuerdo mi king:</p>"
+                                    + "<p align=\"center\"><h2>" + contraseña + "</h2></p>"
+                                    + "&nbsp;No te olvides, CÓDIGO: <b>LAGARTO</b><br>"
+                                    + "&nbsp;Saludos mi rey!</html>";
                             EnviarCorreo(correo, asunto, mensaje, vista);
                             JOptionPane.showMessageDialog(vista, "Hemos enviado un email a tu correo con tu contraseña. ¡Revísalo e inicia sesión!", "Recuperar contraseña", 1);
-
-                            FrmLogin fLogin = new FrmLogin();
-                            CtrlLogin cLogin = new CtrlLogin(fLogin);
-                            fLogin.txtCorreo.setText(correo);
-                            fLogin.txtContraseña.requestFocus();
-
-                            cLogin.inicializar();
 
                             vista.dispose();
                         } else {
@@ -92,12 +83,6 @@ public class CtrlRecuperarContraseña {
         vista.btnRecuperarContraseña.addActionListener(accion);
 
         vista.btnCancelar.addActionListener((ActionEvent e) -> {
-            FrmLogin fLogin = new FrmLogin();
-            CtrlLogin cLogin = new CtrlLogin(fLogin);
-            fLogin.txtCorreo.requestFocus();
-            
-            cLogin.inicializar();
-            
             vista.dispose();
         });
     }
@@ -110,7 +95,7 @@ public class CtrlRecuperarContraseña {
         }
         return true;
     }
-    
+
     public void inicializar() {
         this.vista.setLocationRelativeTo(null);
         this.vista.setVisible(true);

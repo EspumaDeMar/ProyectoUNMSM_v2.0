@@ -88,7 +88,6 @@ public class CtrlLogin {
 
                                             AppEngine.cerrarSesion(colaborador.getID());
 
-                                            vista.txtContraseña.setText("");
                                             super.dispose();
                                         } catch (SQLException ex) {
                                             JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.getMessage(), "SQL", 0);
@@ -142,7 +141,6 @@ public class CtrlLogin {
 
                                             AppEngine.cerrarSesion(cliente.getID());
 
-                                            vista.txtContraseña.setText("");                                            
                                             super.dispose();
                                         } catch (SQLException ex) {
                                             JOptionPane.showMessageDialog(vista, "Oops! Ha ocurrido un error: " + ex.getMessage(), "SQL", 0);
@@ -180,7 +178,6 @@ public class CtrlLogin {
                     getFrame().setVisible(true);
                     getFrame().setLocationRelativeTo(null);
 
-                    vista.txtContraseña.setText("");
                     super.dispose();
                 }
             };
@@ -200,7 +197,6 @@ public class CtrlLogin {
                         getFrame().setVisible(true);
                         getFrame().setLocationRelativeTo(null);
 
-                        vista.txtContraseña.setText("");
                         super.dispose();
                     }
                 };
