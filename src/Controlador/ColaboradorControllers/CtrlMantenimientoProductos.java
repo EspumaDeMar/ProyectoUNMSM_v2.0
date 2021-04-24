@@ -180,6 +180,5 @@ public class CtrlMantenimientoProductos implements IControlador {
         vista.btnEliminar.setEnabled(false);
         vista.btnGuardar.setEnabled(false);
         vista.show();
-
     }
 }
